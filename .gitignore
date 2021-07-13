@@ -1,0 +1,12 @@
+config/alacritty/colors/
+vifminfo
+.esdauth
+.esd_auth
+.php_cs
+.npmrc
+__pycache__/
+vifminfo.json
+.yarnrc
+.ignore
+
+wiki_list.vim

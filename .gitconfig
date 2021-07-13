@@ -1,0 +1,13 @@
+[init]
+  templatedir = ~/.git_template
+  defaultBranch = main
+[alias]
+  ctags = !.git/hooks/ctags
+[user]
+  email = halivelazquez@outlook.com
+  name = Halí V.
+[core]
+  autocrlf = input
+[pull]
+  ff = only
+  rebase = false
