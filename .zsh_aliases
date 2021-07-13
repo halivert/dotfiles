@@ -1,0 +1,51 @@
+alias ..="cd .."
+alias .="cd ."
+alias la="ls -A"
+alias ll="ls -lh"
+alias conf="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+alias goBlog="cd $BLOGPATH"
+alias goJW="cd $JWPATH"
+alias goPlayground="cd $PLAYGROUNDPATH"
+alias goWork="cd $WORKPATH"
+alias goDotfiles="cd $HOME/.dotfiles"
+
+alias mv="mv -i"
+alias n="nvim"
+alias please='sudo $(fc -ln -1)'
+alias rm="rm -i"
+alias tlmgr="$TEXMFDIST/scripts/texlive/tlmgr.pl --usermode"
+
+# Git aliases
+alias ga="git add"
+alias gaa="git add ."
+alias gb="git branch"
+alias gc="git commit"
+alias gcm="git commit -m"
+alias glo="git log --oneline"
+alias glog="\git log --color --all --date-order --decorate\
+	--dirstat=lines,cumulative \
+	--stat | sed 's/\([0-9] file[s]\? .*)$\)/\1\n_______\n-------/g' | less -R"
+alias gm="git merge"
+alias gp="git push"
+alias gpl="git pull"
+alias gs="git status"
+alias gss="git status -s"
+alias gsw="git switch"
+alias gt="git tag --sort version:refname"
+
+alias cs="alacritty-colorscheme -T"
+
+alias lserve="php -S localhost:8000 -t public"
+alias queue="sail artisan queue:work"
+alias sail="bash vendor/bin/sail"
+alias serve="sail up"
+alias tinker="sail artisan tinker"
+
+alias sym="bin/console"
+
+alias ypr="yarn prod"
+alias yw="yarn watch"
+
+alias bserve="browser-sync start -s -f . --no-notify\
+	--host $(hostname -i | cut -d' ' -f1)"
