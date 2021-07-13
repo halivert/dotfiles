@@ -1,0 +1,17 @@
+# |-------------|
+# | System mode |
+# |-------------|
+
+set $m_system (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+mode "$m_system" {
+	bindsym l exec --no-startup-id "$HOME/.bin/fuzzylock", mode "default"
+	bindsym e exit, mode "default"
+	bindsym r exec --no-startup-id reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id poweroff, mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+Control+0 mode "$m_system"
+

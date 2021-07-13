@@ -1,0 +1,97 @@
+# |------------|
+# | Workspaces |
+# |------------|
+
+set $primary eDP-1
+# xrandr --prop | ag primary | awk '{ print $1 }'
+set $nonprimary HDMI-1
+# xrandr --prop | ag connected | awk '{ print $1 }' | xargs
+
+# Define names for default workspaces for which we configure key bindings later
+# on. We use variables to avoid repeating the names in multiple places.
+set $ws1 "1:α"
+set $ws2 "2:β"
+set $ws3 "3:γ"
+set $ws4 "4:δ"
+set $ws5 "5:ε"
+set $ws6 "6:ζ"
+set $ws7 "7:η"
+set $ws8 "8:θ"
+set $ws9 "9:ι"
+
+set $ws10 "10:κ"
+set $ws11 "11:λ"
+set $ws12 "12:μ"
+set $ws13 "13:ν"
+set $ws14 "14:ξ"
+set $ws15 "15:ο"
+
+# Switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+
+# Move focused container to workspace and move to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1;
+bindsym $mod+Shift+2 move container to workspace number $ws2;
+bindsym $mod+Shift+3 move container to workspace number $ws3;
+bindsym $mod+Shift+4 move container to workspace number $ws4;
+bindsym $mod+Shift+5 move container to workspace number $ws5;
+bindsym $mod+Shift+6 move container to workspace number $ws6;
+bindsym $mod+Shift+7 move container to workspace number $ws7;
+bindsym $mod+Shift+8 move container to workspace number $ws8;
+bindsym $mod+Shift+9 move container to workspace number $ws9;
+
+# Output workspaces
+workspace $ws1 output $primary
+workspace $ws2 output $primary
+workspace $ws3 output $primary
+workspace $ws4 output $primary
+workspace $ws5 output $primary
+workspace $ws6 output $primary
+workspace $ws7 output $primary
+workspace $ws8 output $primary
+workspace $ws9 output $primary
+
+workspace $ws10 output $nonprimary
+workspace $ws11 output $nonprimary
+workspace $ws12 output $nonprimary
+workspace $ws13 output $nonprimary
+workspace $ws14 output $nonprimary
+workspace $ws15 output $nonprimary
+
+set $m_worskpaces Workspaces
+mode "$m_worskpaces" {
+	bindsym a workspace number $ws10; mode "default"
+	bindsym b workspace number $ws11; mode "default"
+	bindsym c workspace number $ws12; mode "default"
+	bindsym d workspace number $ws13; mode "default"
+	bindsym e workspace number $ws14; mode "default"
+	bindsym f workspace number $ws15; mode "default"
+
+	bindsym Shift+a move container to workspace number $ws10; \
+		workspace number $ws10
+	bindsym Shift+b move container to workspace number $ws11; \
+		workspace number $ws11
+	bindsym Shift+c move container to workspace number $ws12; \
+		workspace number $ws12
+	bindsym Shift+d move container to workspace number $ws13; \
+		workspace number $ws13
+	bindsym Shift+e move container to workspace number $ws14; \
+		workspace number $ws14
+	bindsym Shift+f move container to workspace number $ws15; \
+		workspace number $ws15
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Control+w mode "default"
+}
+
+bindsym $mod+Control+w mode "$m_worskpaces"
+

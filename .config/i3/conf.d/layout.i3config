@@ -1,0 +1,41 @@
+# |--------|
+# | Layout |
+# |--------|
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Tab focus next
+bindsym $mod+Shift+Tab focus prev
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# Toggle split
+bindsym $mod+g split toggle
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Change container layout (stacked, tabbed, toggle split)
+bindsym $mod+o layout stacking
+# 59 = ,
+bindcode $mod+59 layout tabbed
+bindsym $mod+e layout toggle split
+
+# Toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+Up resize grow height 3 px or 3 ppt
+bindsym $mod+Right resize grow width 3 px or 3 ppt
+bindsym $mod+Left resize shrink width 3 px or 3 ppt
+bindsym $mod+Down resize shrink height 3 px or 3 ppt
+

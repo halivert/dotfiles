@@ -1,0 +1,12 @@
+# |--------------|
+# | Applications |
+# |--------------|
+
+bindsym $mod+$alt+t exec /opt/Telegram/Telegram
+bindsym $mod+$alt+b exec /bin/firefox-developer-edition
+bindsym $mod+$alt+m exec /usr/bin/thunderbird
+bindsym $mod+$alt+d exec /bin/discord
+bindsym $mod+$alt+4 exec /bin/TogglDesktop
+bindsym $mod+$alt+e exec --no-startup-id $term -e /bin/vifm
+bindsym $mod+$alt+p exec pavucontrol
+bindsym $mod+$alt+c exec $HOME/.bin/vscode

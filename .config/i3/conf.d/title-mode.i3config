@@ -1,0 +1,17 @@
+# |------------|
+# | Title mode |
+# |------------|
+
+set $m_title Title
+mode "$m_title" {
+	bindsym c title_format "%title (%class)"
+	bindsym r title_format "%title"
+
+	set $exit border pixel 0, mode "default"
+	bindsym Return $exit
+	bindsym Escape $exit
+	bindsym $mod+Control+t $exit
+}
+
+bindsym $mod+Control+t border normal 0, mode "$m_title"
+
