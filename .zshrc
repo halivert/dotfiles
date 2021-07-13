@@ -1,5 +1,7 @@
 #! /bin/zsh
 
+fpath=(~/.zsh $fpath)
+
 export EDITOR="nvim"
 export TEXMFHOME="/home/hali/.texmf"
 export TEXMFDIST="/usr/share/texmf-dist"
