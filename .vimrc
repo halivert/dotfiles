@@ -89,10 +89,8 @@ no : ;
 nn <leader>s :%s/\s\+$//e<cr>
 
 set undodir=$HOME/.vim/undodir
-if exists("configPath")
-	execute "nn <leader>ev :e " . configPath . "/.vimrc"
-	execute "nn <leader>ep :e " . configPath . "/plugins.vim"
-en
+nn <leader>ev :e $HOME/.vimrc<cr>
+nn <leader>ep :e $HOME/.vim/plugins.vim<cr>
 
 autocmd BufRead,BufNewFile *.blade.php set filetype=blade
 autocmd BufRead,BufNewFile *.vifm set filetype=vim
