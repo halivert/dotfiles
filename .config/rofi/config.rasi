@@ -1,0 +1,8 @@
+configuration {
+	modi: "drun,combi";
+	combi-modi: "window,drun";
+	show-icons: true;
+	icon-theme: "Papirus Dark";
+}
+
+@import "/usr/share/rofi/themes/gruvbox-dark.rasi"
