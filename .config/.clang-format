@@ -1,0 +1,9 @@
+---
+BasedOnStyle: Google
+TabWidth: 2
+UseTab: Always
+IndentWidth: 2
+AccessModifierOffset: -2
+NamespaceIndentation: All
+# When you activate this 👇🏽, deactivate that ☝🏽
+# IndentAccessModifiers: true

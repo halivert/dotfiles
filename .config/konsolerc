@@ -1,0 +1,43 @@
+State=AAAA/wAAAAD9AAAAAAAABVYAAALSAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAA==
+StatusBar=Disabled
+eDP-1 HDMI-1 Height 1366x768=742
+eDP-1 HDMI-1 Width 1366x768=1366
+eDP-1 HDMI-1 XPosition 1366x768=0
+eDP-1 HDMI-1 YPosition 1366x768=26
+
+[Desktop Entry]
+DefaultProfile=Konsole dark.profile
+
+[Favorite Profiles]
+Favorites=Yakuake.profile,Gifs.profile,Yakuake-Day.profile
+
+[FileLocation]
+scrollbackUseCacheLocation=true
+scrollbackUseSystemLocation=false
+
+[KFileDialog Settings]
+listViewIconSize=0
+
+[KonsoleWindow]
+ShowMenuBarByDefault=false
+UseSingleInstance=true
+
+[MainWindow]
+Height 1080=1051
+Height 720=711
+Height 768=740
+Height 800=711
+Height 900=871
+MenuBar=Disabled
+State=AAAA/wAAAAD9AAAAAAAABVYAAALmAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAIAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgAAAAAA/////wAAAAAAAAAAAAAAHABzAGUAcwBzAGkAbwBuAFQAbwBvAGwAYgBhAHIAAAAAAP////8AAAAAAAAAAA==
+StatusBar=Disabled
+ToolBarsMovable=Disabled
+Width 1280=1366
+Width 1366=1366
+Width 1440=1440
+Width 1920=1920
+Window-Maximized 800x1280=true
+eDP-1 HDMI-1 Height 1366x768=742
+eDP-1 HDMI-1 Width 1366x768=683
+eDP-1 HDMI-1 XPosition 1366x768=2049
+eDP-1 HDMI-1 YPosition 1366x768=26

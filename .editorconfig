@@ -1,0 +1,10 @@
+root = true
+
+[*]
+indent_style = tab
+
+[*.lua]
+# Using LuaRocks style guide
+indent_style = space
+indent_size = 3
+end_of_line = lf

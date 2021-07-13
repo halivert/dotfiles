@@ -1,0 +1,13 @@
+throttle.min_peers.normal.set = 40
+throttle.max_peers.normal.set = 52
+
+throttle.min_peers.seed.set = 10
+throttle.max_peers.seed.set = 52
+
+throttle.max_uploads.set = 2
+
+directory.default.set = $HOME/Downloads
+
+session.path.set = $HOME/.rtorrent.session
+
+network.port_range.set = 6890-6890
