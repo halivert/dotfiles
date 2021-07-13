@@ -1,40 +1,40 @@
-set nocompatible
+se nocompatible
 
 if exists('py2') && has('python')
-elseif has('python3')
+elsei has('python3')
 en
 
-set showcmd
-set relativenumber
-set number
+se showcmd
+se relativenumber
+se number
 syntax enable
 
 let mapleader="\<space>"
-set splitbelow
-set splitright
+se splitbelow
+se splitright
 
-set path=**
-set autoindent
-set noexpandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set scrolloff=3
-set regexpengine=0
+se path=**
+se autoindent
+se noexpandtab
+se tabstop=2
+se shiftwidth=2
+se softtabstop=2
+se scrolloff=3
+se regexpengine=0
 
-set ruler
-set nowrap
-set wildmenu
-set hlsearch
-set diffopt=vertical
-set termguicolors
-set timeoutlen=500
+se ruler
+se nowrap
+se wildmenu
+se hlsearch
+se diffopt=vertical
+se termguicolors
+se timeoutlen=500
 
-set shortmess+=c
-set nobackup
-set nowritebackup
-set pyxversion=3
-set hidden
+se shortmess+=c
+se nobackup
+se nowritebackup
+se pyxversion=3
+se hidden
 
 nn Q <nop>
 nn \\ :let @/ = ""<cr>
@@ -48,7 +48,7 @@ vn K :m '<-2<cr>gv=gv
 
 nn <leader># :so $MYVIMRC<cr>
 
-set viewoptions=folds,cursor
+se viewoptions=folds,cursor
 augroup AutoSaveFolds
 	autocmd!
 	autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview
@@ -58,17 +58,17 @@ augroup end
 ino `<< «
 ino `>> »
 
-set textwidth=80
+se textwidth=80
 if (exists('+colorcolumn'))
-	set colorcolumn=81
+	se colorcolumn=81
 	highlight ColorColumn guibg=#5f8700 ctermbg=8
 en
 
-set lazyredraw
-set inccommand=split
-set foldmethod=indent
+se lazyredraw
+se inccommand=split
+se foldmethod=indent
 
-set updatetime=200
+se updatetime=200
 nn <C-S> :up<cr>
 nn <C-_> :Bclose<cr>
 nn <leader>q :bd<cr>
@@ -77,7 +77,7 @@ nn <leader>e :Vex<cr>
 nn <C-Tab> :bn<cr>
 nn <C-S-Tab> :bp<cr>
 
-set undofile
+se undofile
 
 " Use with anne pro 2 dvorak layout (es layout)
 " no ñ :
@@ -88,12 +88,12 @@ no : ;
 
 nn <leader>s :%s/\s\+$//e<cr>
 
-set undodir=$HOME/.vim/undodir
+se undodir=$HOME/.vim/undodir
 nn <leader>ev :e $HOME/.vimrc<cr>
 nn <leader>ep :e $HOME/.vim/plugins.vim<cr>
 
-autocmd BufRead,BufNewFile *.blade.php set filetype=blade
-autocmd BufRead,BufNewFile *.vifm set filetype=vim
+autocmd BufRead,BufNewFile *.blade.php se filetype=blade
+autocmd BufRead,BufNewFile *.vifm se filetype=vim
 autocmd BufReadPost *.doc,*.docx,*.rtf,*.odp,*.odt
 			\ silent %!pandoc "%" -tplain -o /dev/stdout
 
@@ -116,10 +116,12 @@ fu! InitialBackground()
 	let l:nowEnd = ((l:now[0] * 60 + l:now[1]) - (l:end[0] * 60 + l:end[1]))
 
 	if (l:stNow > 0 && l:nowEnd < 0)
-		set background=light
+		se background=light
 	el
-		set background=dark
+		se background=dark
 	en
 endf
 
 call InitialBackground()
+
+so $HOME/.vim/plugins.vim

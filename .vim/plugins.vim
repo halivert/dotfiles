@@ -6,7 +6,7 @@ let g:polyglot_disabled = ['autoindent']
 " |---------|
 " | Vimwiki |
 " |---------|
-exe printf('so %s%swiki_list.vim', configPath, dirSep)
+so $HOME/.vim/wiki_list.vim
 let g:vimwiki_table_mappings=0
 let g:vimwiki_hl_headers=1
 let g:vimwiki_table_auto_fmt=0
@@ -16,7 +16,7 @@ nn <leader>vhtml :VimwikiAll2HTML!<cr>
 
 filet plugin indent on
 
-cal plug#begin('$HOME' . dirSep . '.vim' . dirSep . 'plugged')
+cal plug#begin('$HOME/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
@@ -266,7 +266,7 @@ nn <silent> t<c-g> :TestVisit<cr>
 " | Ultisnips |
 " |-----------|
 let g:UltiSnipsSnippetDirectories=[
-			\		'$HOME' . dirSep . '.vim' . dirSep . 'snippets-used'
+			\		'$HOME/.vim/snippets-used'
 			\	]
 
 " |-----|
