@@ -262,13 +262,6 @@ nn <silent> t<c-s> :TestSuite<cr>
 nn <silent> t<c-t> :TestLast<cr>
 nn <silent> t<c-g> :TestVisit<cr>
 
-" |-----------|
-" | Ultisnips |
-" |-----------|
-let g:UltiSnipsSnippetDirectories=[
-			\		'$HOME/.vim/snippets-used'
-			\	]
-
 " |-----|
 " | Coc |
 " |-----|
