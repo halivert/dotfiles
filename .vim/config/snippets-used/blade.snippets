@@ -1,0 +1,131 @@
+extends html, php
+
+snippet foreach "Blade foreach"
+@foreach (\$${1:items} as \$${2:item})
+	$0
+@endforeach
+endsnippet
+
+snippet {{ "Blade echo" iA
+{{ $1 }}$0
+endsnippet
+
+snippet if "Blade if"
+@if ($1)
+	$0
+@endif
+endsnippet
+
+snippet @php "Php tag"
+@php
+	$0
+@endphp
+endsnippet
+
+snippet @ "New tag"
+@${1}
+	$0
+@end$1
+endsnippet
+
+snippet @section "Section tag"
+@section($1)
+	$0
+@endsection
+endsnippet
+
+snippet i@section "Inline section tag"
+@section($1, ${0:$1})
+endsnippet
+
+snippet errors: "Errors for form input"
+:errors='@json(\$errors->get('$1'))'
+endsnippet
+
+snippet old "Old for form input"
+old="{{ old('$1') }}"
+endsnippet
+
+snippet noe "Name, old, errors combo"
+name="$1"
+old="{{ old('${2:$1}') }}"
+:errors='@json(\$errors->get('${3:$2}'))'
+endsnippet
+
+snippet nve "Name, value, errors combo"
+name="$1"
+value="{{ old('${2:$1}') }}"
+:errors='@json(\$errors->get('${3:$2}'))'
+endsnippet
+
+snippet float-button "Floating button"
+<x-floating-button
+	:url="route('$1')"
+	${2:text="${3:general.$4}"}>
+</x-floating-button>
+endsnippet
+
+snippet can "Can blade directive"
+@can($1)
+	$0
+@endcan
+endsnippet
+
+snippet b-input "Bulma input"
+<b-input
+	label="{{ __('${1:general.$2}') }}"
+	placeholder="{{ __('${3:$1}') }}"
+	${4:noe}
+	${5:required}>
+	$0
+</b-input>
+endsnippet
+
+snippet b-select "Bulma select"
+<b-select
+	label="{{ __('${1:general.$2}') }}"
+	placeholder="{{ __('${3:$1}') }}"
+	:elements=${4:'${5:@json($6)}'}
+	name="$7"
+	old="{{ old('${8:$7}') }}"
+	:errors='@json(\$errors->get('${9:$8}'))'
+	${10:required}>
+	$0
+</b-select>
+endsnippet
+
+snippet showField "Bulma field to show data"
+<div class="field">
+	<label class="label is-inline-block">{{
+		__('${1:general.${2:label}}')
+	}}:</label>
+	<span>{{ \$${3:model}->${4:$2} }}</span>
+</div>
+endsnippet
+
+snippet t:form "Tailwindcss form"
+<div class="mb-6">
+	<label
+		class="block mb-2 uppercase font-bold text-xs text-gray-700"
+		for="$1">
+		${0:$1}
+	</label>
+
+	<input
+		class="border border-gray-400 p-2 w-full"
+		type="text"
+		name="$1"
+		id="$1"
+		required>
+
+	@error('$1')
+		<p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+	@enderror
+</div>
+endsnippet
+
+snippet isset "Isset blade directive"
+@isset(${1:\$var})
+	$0
+@endisset
+endsnippet

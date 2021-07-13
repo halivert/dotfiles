@@ -1,0 +1,3 @@
+#! /bin/sh
+
+firefox-developer-edition https://duckduckgo.com/?q="$1"

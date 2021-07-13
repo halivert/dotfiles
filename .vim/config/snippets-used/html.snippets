@@ -1,0 +1,108 @@
+snippet bulma:field "Bulma form field"
+<div class="field">
+  <label class="label">$1:</label>
+  <div class="control">
+    $0
+  </div>
+</div>
+endsnippet
+
+snippet textarea "Textarea input"
+<textarea class="textarea" name="$1" id="$1" rows="${2:3}" cols="${3:20}">$0</textarea>
+endsnippet
+
+snippet bt:textarea "Textarea input"
+<textarea class="textarea" name="$1" id="$1" rows="${2:3}" cols="${3:20}">$0</textarea>
+endsnippet
+
+snippet bt:navdrop "Bootstrap dropdown for nav"
+<div class="nav-item dropdown" id="$1">
+  <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    $2
+  </a>
+  <div class="dropdown-menu">
+    $0
+  </div>
+</div>
+endsnippet
+
+snippet bt:dropitem "Bootstrap dropdown item"
+<a class="dropdown-item" href="$1">$0</a>
+endsnippet
+
+snippet bt:formgroup "Bootstrap form group"
+<div class="form-group">
+  <label for="$1" class="col-form-label">$1</label>
+  $0
+</div>
+endsnippet
+
+snippet bt:select "Bootstrap select"
+<div class="form-group">
+  <label for="$1" class="col-form-label">${0:${1/(\w+)/\u$0/}}</label>
+  <select class="form-control" id="$1" name="$1"></select>
+</div>
+endsnippet
+
+snippet bt:select:col "Bootstrap select"
+<div class="form-group col">
+  <label for="$1" class="col-form-label">${0:${1/(\w+)/\u$0/}}</label>
+  <select class="form-control" id="$1" name="$1"></select>
+</div>
+endsnippet
+
+snippet bulma:submit "Bulma submit button"
+<div class="field">
+  <p class="control">
+  <button class="button ${1:is-primary}">
+    $0
+  </button>
+  </p>
+</div>
+endsnippet
+
+snippet bt:input:number "Bootstrap input number"
+<div class="form-group">
+  <label for="$1" class="col-form-label">${2:$1}</label>
+  <input type="number" class="form-control" name="$1" id="$1" placeholder="${3:$2}" $0 />
+</div>
+endsnippet
+
+snippet bt:input:number:col "Bootstrap input number column"
+<div class="form-group col">
+  <label for="$1" class="col-form-label">${2:$1}</label>
+  <input type="number" class="form-control" name="$1" id="$1" placeholder="${3:$2}" $0 />
+</div>
+endsnippet
+
+snippet i. "Icon class"
+<i class="$1" ${2:aria-hidden="true"}>$0</i>
+endsnippet
+
+snippet bulma:select "Bulma select"
+<div class="select">
+  <select>
+    <option>Select dropdown</option>
+    <option>With options</option>
+  </select>
+</div>
+endsnippet
+
+snippet bulma:text-input "Bulma text input"
+<input class="input" type="text" placeholder="Text input">
+endsnippet
+
+snippet html "HTML template"
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>$1</title>
+	</head>
+	<body>
+		$0
+	</body>
+</html>
+endsnippet

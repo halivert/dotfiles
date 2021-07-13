@@ -1,0 +1,47 @@
+snippet fmatter "Front matter"
+---
+author: "${1:Halí}"
+title: "${2:`!v expand("%:t:r")`}"
+date: `date "+%Y-%m-%d %H:%M"`
+category: $3
+---
+$0
+endsnippet
+
+snippet curdate "Insert date"
+`date "+%Y-%m-%d %H:%M"`
+endsnippet
+
+snippet eq "Equation for mathjax"
+<p>
+\[
+\begin{aligned}
+$1
+\end{aligned}
+\]
+</p>
+endsnippet
+
+snippet lineq "Inline equation"
+\\\($1\\\)
+endsnippet
+
+snippet Adiós "Adiós con manita"
+${1:Adiós} 👋🏽
+endsnippet
+
+snippet UpArrow "Up arrow" i
+↑
+endsnippet
+
+snippet DownArrow "Down arrow" i
+↓
+endsnippet
+
+snippet picture "Picture fast..."
+{%
+	include picture.html
+		src="$1"
+		alt="$2"
+%}
+endsnippet

@@ -1,0 +1,21 @@
+se gcr=a:hor50-Cursor-blinkwait175-blinkoff150-blinkon175
+no ; :
+no : ;
+se nu
+se rnu
+se sc
+let mapleader='\'
+se noet
+nn Q <nop>
+im `? ¿
+im `! ¡
+nn <C-S> :up<cr>
+nn <C-_> :bd<CR>
+nn <C-Tab> :bn<cr>
+nn <C-S-Tab> :bp<cr>
+nn <leader><leader> :let @/ = ""<cr>
+nm <leader>y "+y
+nm <leader>p "+p
+vn <leader>y "+y
+vn <leader>p "+p
+se hls

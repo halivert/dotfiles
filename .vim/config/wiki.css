@@ -1,0 +1,143 @@
+/* https://github.com/hankchizljaw/modern-css-reset */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html {
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
+
+i:not(.no-icon) {
+	font-style: normal;
+	font-family: "Ionicons", "Font Awesome 5 Free", sans-serif;
+}
+
+/* Set core body defaults */
+body {
+	display: flex;
+	margin: 0;
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.2;
+	padding: 0.5em 4em;
+	font-size: 20px;
+	justify-content: space-between;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+	list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+	border: none;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+	margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+	filter: blur(10px);
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* End of reset */
+
+table {
+	border-collapse: collapse;
+	table-layout: fixed;
+	border: 2px solid #9a91b6;
+}
+
+table:not(last-child) {
+	margin-bottom: 1em;
+}
+
+tbody tr:nth-child(odd) {
+	background-color: #dedae7;
+}
+
+tbody tr:nth-child(even) {
+	background-color: #c8c1d7;
+}
+
+th,
+td {
+	border: 1px solid #9c8fb7;
+	padding: 0.125em 0.5em;
+}
+
+pre,
+code {
+	font-family: "IBM Plex Mono", monospace;
+}
+
+p > a {
+	background-color: #087e8b;
+}
+
+p > a:hover {
+	background-color: #03343a;
+}
+
+li > a {
+	color: #e66082;
+}
+
+li > a:hover {
+	color: #b01c41;
+}
+
+blockquote {
+	color: #686868;
+	border-left: 5px solid #dcdcdc;
+}
+
+th {
+	background-color: #a79bbf;
+}
+
+.todo {
+	background-color: #d33f49;
+}
+
+.tag {
+	background-color: #eeeeee;
+	font-family: monospace;
+	padding: 2px;
+}

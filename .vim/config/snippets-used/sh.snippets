@@ -1,0 +1,32 @@
+snippet options "Get arguments in execution"
+OPTS=\$(getopt -o vhns: \
+			 --long verbose,dry-run,help,stack-size: \
+			 -n 'parse-options' -- "\$@")
+
+if [ \$? != 0 ]; then
+	echo "Failed parsing options." >& 2
+	exit 1
+fi
+
+eval set -- "\$OPTS"
+
+VERBOSE=false
+HELP=false
+DRY_RUN=false
+STACK_SIZE=0
+
+while true; do
+  case "\$1" in
+    -v | --verbose ) VERBOSE=true; shift ;;
+    -h | --help )    HELP=true; shift ;;
+    -n | --dry-run ) DRY_RUN=true; shift ;;
+    -s | --stack-size ) STACK_SIZE="\$2"; shift; shift ;;
+    -- ) shift; break ;;
+    * ) break ;;
+  esac
+done
+endsnippet
+
+snippet verbose "Print -v if VERBOSE is true"
+\$([[ "\$VERBOSE" = "true" ]] && echo "-v") \
+endsnippet

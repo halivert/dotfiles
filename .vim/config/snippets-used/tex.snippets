@@ -1,0 +1,157 @@
+global !p
+texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C',
+'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS',
+'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z']]
+
+texIgnoreMathZones = ['texMathText']
+
+texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+
+ignore = texIgnoreMathZoneIds[0]
+
+def math():
+	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+	try:
+		first = next(
+						i for i in reversed(synstackids)
+						if i in texIgnoreMathZoneIds or i in texMathZoneIds
+				)
+		return first != ignore
+	except StopIteration:
+		return False
+endglobal
+
+snippet ques "Question"
+¿$1?
+endsnippet
+
+snippet msk "Med skip" iA
+\medskip\\\\
+endsnippet
+
+snippet ssk "Small skip" A
+\smallskip\\\\
+endsnippet
+
+snippet article "Basic article template"
+\documentclass[letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\pagenumbering{roman}
+
+\begin{document}
+$1
+\end{document}
+endsnippet
+
+snippet box "Draw box"
+`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+$0
+endsnippet
+
+snippet mk "Inline math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+		snip.rv = ' '
+else:
+		snip.rv = ''
+`$2
+endsnippet
+
+snippet dm "Displayed math" wA
+\[
+$1
+\] $0
+endsnippet
+
+context "math()"
+snippet sr "^2" iA
+^2
+endsnippet
+
+context "math()"
+snippet cb "^3" iA
+^3
+endsnippet
+
+context "math()"
+snippet compl "complement" iA
+^{c}
+endsnippet
+
+context "math()"
+snippet td "superscript" iA
+^{$1}$0
+endsnippet
+
+context "math()"
+snippet // "Fraction" iA
+\\frac{$1}{$2}$0
+endsnippet
+
+context "math()"
+snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
+\\frac{`!p snip.rv = match.group(1)`}{$1}$0
+endsnippet
+
+context "math()"
+priority 1000
+snippet '^.*\)/' "() Fraction" wrA
+`!p
+stripped = match.string[:-1]
+depth = 0
+i = len(stripped) - 1
+while True:
+	if stripped[i] == ')': depth += 1
+	if stripped[i] == '(': depth -= 1
+	if depth == 0: break;
+	i -= 1
+snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
+`{$1}$0
+endsnippet
+
+context "math()"
+snippet / "Fraction" iA
+\\frac{${VISUAL}}{$1}$0
+endsnippet
+
+snippet sympy "sympy block " w
+sympy $1 sympy$0
+endsnippet
+
+priority 1100
+snippet 'sympy(.*)sympy' "evaluate sympy" wr
+`!p
+from sympy import *
+x, y, z, t = symbols('x y z t')
+k, m, n = symbols('k m n', integer=True)
+f, g, h = symbols('f g h', cls=Function)
+init_printing()
+snip.rv = eval('latex(' + match.group(1).replace('\\', '') \
+		.replace('^', '**') \
+		.replace('{', '(') \
+		.replace('}', ')') + ')')
+`
+endsnippet
+
+snippet bsk "Base line skip" iA
+\\\[\baselineskip]
+endsnippet
+
+snippet 1ex "1 ex break" i
+\\\[1ex]
+endsnippet
+
+snippet newProj "New project entry"
+\textbf{${1:name}}
+(\url{${2:url}})
+\hspace*{\fill} {\footnotesize ${3:time}}
+\begin{itemize}
+	\item {\footnotesize ${0:items}}
+\end{itemize}
+\vspace{1.5em}
+endsnippet

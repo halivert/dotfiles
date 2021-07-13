@@ -1,0 +1,14 @@
+snippet spAlta "Procedimiento Alta"
+CREATE PROCEDURE sp$1Alta (
+
+)
+BEGIN
+  DECLARE nvoId INT;
+
+  SELECT COALESCE(MAX(id$1), 0) + 1 INTO nvoId
+  FROM $1;
+
+  INSERT INTO $1(id$1, $2)
+  VALUES(nvoId, $3);
+END !!
+endsnippet

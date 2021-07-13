@@ -1,0 +1,19 @@
+snippet cl "Console log"
+console.log($0);
+endsnippet
+
+snippet jchange "On change jquery" w
+change(function(e) {
+  $0
+});
+endsnippet
+
+snippet $.ajax "Ajax call"
+$.ajax({
+  url: $1,
+  ${2:data: $3,}
+  ${4:method: '${5:POST}',}
+}).done(function(${6:msg}) {
+  $0
+});
+endsnippet
