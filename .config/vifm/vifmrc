@@ -481,6 +481,6 @@ set relativenumber
 
 noremap ; :
 noremap : ;
-colo iceberg
+colo solarized-dark
 
 nnoremap E :edit<cr>
