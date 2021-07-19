@@ -125,3 +125,4 @@ endf
 call InitialBackground()
 
 so $HOME/.vim/plugins.vim
+so $HOME/.vim/functions.vim

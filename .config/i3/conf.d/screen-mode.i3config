@@ -1,0 +1,17 @@
+# |-------------|
+# | Screen mode |
+# |-------------|
+
+set $m_screen Screen mode
+mode "$m_screen" {
+	bindsym o exec --no-startup-id "$HOME/.bin/only-second-screen"
+	bindsym h exec --no-startup-id "$HOME/.bin/default-screen-setup --left-of"
+	bindsym l exec --no-startup-id "$HOME/.bin/default-screen-setup --right-of"
+	bindsym Control+o exec --no-startup-id "xrandr --output HDMI-1 --off"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+Control+s mode "$m_screen"
+
