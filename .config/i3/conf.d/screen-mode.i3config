@@ -8,6 +8,9 @@ mode "$m_screen" {
 	bindsym h exec --no-startup-id "$HOME/.bin/default-screen-setup --left-of"
 	bindsym l exec --no-startup-id "$HOME/.bin/default-screen-setup --right-of"
 	bindsym Control+o exec --no-startup-id "xrandr --output HDMI-1 --off"
+	bindsym s exec --no-startup-id "$HOME/.bin/default-screen-setup --same-as"
+	bindsym k exec --no-startup-id "$HOME/.bin/default-screen-setup --above"
+	bindsym j exec --no-startup-id "$HOME/.bin/default-screen-setup --below"
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"

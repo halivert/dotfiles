@@ -2,7 +2,7 @@
 # | Clients |
 # |---------|
 
-assign [class="^Thunderbird$"] →  $ws2
+assign [class="^Thunderbird$"] →  $ws9
 assign [class="^TelegramDesktop$"] →  $ws3
 assign [class="^discord$"] →  $ws4
 assign [class="^zoom$" instance="^zoom$"] →  $ws5

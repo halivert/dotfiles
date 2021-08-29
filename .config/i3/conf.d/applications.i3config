@@ -11,3 +11,6 @@ bindsym $mod+$alt+e exec --no-startup-id $term -e /bin/vifm
 bindsym $mod+$alt+p exec pavucontrol
 bindsym $mod+$alt+c exec $HOME/.bin/vscode
 bindsym $mod+$alt+n exec nemo
+bindsym $mod+$alt+s exec signal-desktop
+
+exec --no-startup-id kdeconnect-indicator

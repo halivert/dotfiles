@@ -12,7 +12,7 @@ export HISTCONTROL=ignoreboth
 export GOPATH="/home/hali/.go"
 
 export BLOGPATH="$HOME/Documents/Playground/Git/halivert.dev"
-export WORKPATH="$HOME/Documents/Work/Asgo/alpha"
+export WORKPATH="$HOME/Documents/Work/Asgo"
 export PLAYGROUNDPATH="$HOME/Documents/Playground"
 export COMPONENTSPATH="$PLAYGROUNDPATH/Js/Vue/Base/components"
 export JWPATH="$HOME/Documents/JW"

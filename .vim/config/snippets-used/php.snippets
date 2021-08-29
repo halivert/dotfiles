@@ -19,7 +19,7 @@ while ($1)
 endsnippet
 
 snippet method "Method"
-public function $1($2)
+public function $1($2)${3:: $4}
 {
 	$0
 }
@@ -54,9 +54,7 @@ snippet pivot:table "Pivot table for Laravel migrations"
 endsnippet
 
 snippet test "Test for phpunit"
-/**
-* @test
-*/
+/** @test */
 public function ${2:test$3}($4)
 {
 	$0
@@ -64,7 +62,25 @@ public function ${2:test$3}($4)
 endsnippet
 
 snippet afun "Anonymous function" i
-function ($1) ${2:use ($3)} {
+function ($1)${2: use ($3)} {
 	$0
 }
 endsnippet
+
+snippet browse "Browser test"
+${1:/**
+ * @test
+ * @depends $2
+ */}
+public function ${3:test_name}()
+{
+	$this->browse(function (Browser $browser) {
+		${4:$browser->$0}
+	});
+}
+endsnippet
+
+snippet screenshot "Function for dusk screenshot"
+${1:->}screenshot("${2:\{$this->testPrefix\} $3}")${0:;}
+endsnippet
+

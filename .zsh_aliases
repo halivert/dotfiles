@@ -37,7 +37,7 @@ alias gt="git tag --sort version:refname"
 alias lserve="php -S localhost:8000 -t public"
 alias queue="sail artisan queue:work"
 alias sail="bash vendor/bin/sail"
-alias serve="sail up"
+alias serve="WWWUSER=$(id -u) docker-compose up"
 alias tinker="sail artisan tinker"
 
 alias sym="bin/console"

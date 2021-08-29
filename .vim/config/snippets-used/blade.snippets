@@ -129,3 +129,38 @@ snippet isset "Isset blade directive"
 	$0
 @endisset
 endsnippet
+
+snippet genericElement "Generic element template"
+<x-form.generic-element
+	:name="$name"
+	:errors="$errors"
+	:error-bag="$attributes->get('errors', 'default')"
+	{{
+		$attributes->except([
+			'type',
+		])->merge([
+			'type' => $attributes->get('messages-type')
+		])
+	}}>
+
+	<$0
+		{{
+			$attributes
+				->whereDoesntStartWith($hiddenAttributes)
+				->merge([])
+		}}
+	></$0>
+
+	@isset ($checkbox)
+		<x-slot name="checkbox">{{ $checkbox }}</x-slot>
+	@endisset
+
+	@isset ($addonsleft)
+		<x-slot name="addonsleft">{{ $addonsleft }}</x-slot>
+	@endisset
+
+	@isset ($addonsright)
+		<x-slot name="addonsright">{{ $addonsright }}</x-slot>
+	@endisset
+</x-form.generic-element>
+endsnippet

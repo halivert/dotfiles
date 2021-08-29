@@ -2,25 +2,42 @@ extends html, javascript
 
 snippet vbase "Vue base"
 <template>
-  <div>
-  </div>
+	<div></div>
 </template>
 
 <script>
-  export default {
+import { defineComponent } from "vue";
 
-  };
+export default defineComponent({
+	name: "`!p snip.rv = snip.basename`",
+	${1:inheritAttrs: false},
+	setup(${2:props${3:, ctx}}) {
+		$0
+	},
+});
 </script>
 
-<style scoped>
-
-</style>
+<style lang="scss"></style>
 endsnippet
 
 snippet data() "descripcion"
 data() {
-  return {
-	  $0
-  };
+	return {
+		$0
+	};
+},
+endsnippet
+
+snippet components "Components object"
+components: {
+	$0,
+},
+endsnippet
+
+snippet props "Props object"
+props: {
+	$1: ${2:\{
+		$0
+	\}},
 },
 endsnippet

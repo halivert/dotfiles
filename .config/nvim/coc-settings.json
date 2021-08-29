@@ -1,4 +1,7 @@
 {
+	"diagnostic.virtualText": true,
+	"diagnostic.virtualTextCurrentLineOnly": false,
+	"diagnostic.enable": false,
 	"phpls.path": "/home/hali/Documents/Playground/Php/Intelephense",
 	"phpls.enable": true,
 	"intelephense.files.exclude": [
