@@ -1,11 +1,8 @@
 se gcr=a:hor50-Cursor-blinkwait175-blinkoff150-blinkon175
 no ; :
 no : ;
-se nu
-se rnu
-se sc
+se nu rnu sc noet hls
 let mapleader='\'
-se noet
 nn Q <nop>
 im `? ¿
 im `! ¡
@@ -18,4 +15,3 @@ nm <leader>y "+y
 nm <leader>p "+p
 vn <leader>y "+y
 vn <leader>p "+p
-se hls

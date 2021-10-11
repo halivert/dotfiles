@@ -34,6 +34,7 @@ Backup Local=false
 Backup Prefix=
 Backup Remote=false
 Backup Suffix=~
+Camel Cursor=true
 Encoding=UTF-8
 End of Line=0
 Indent On Backspace=true
@@ -67,6 +68,9 @@ Fallback Encoding=ISO 8859-15
 
 [KTextEditor Renderer]
 Animate Bracket Matching=false
+Auto Color Theme Selection=true
+Color Theme=Breeze Dark
+Font=monospace,9,-1,2,50,0,0,0,0,0
 Schema=Vim (dark)
 Show Indentation Lines=false
 Show Whole Bracket Expression=false
@@ -77,8 +81,10 @@ Allow Mark Menu=true
 Auto Brackets=false
 Auto Center Lines=0
 Auto Completion=true
+Auto Completion Preselect First Entry=true
 Backspace Remove Composed Characters=false
 Bookmark Menu Sorting=0
+Bracket Match Preview=false
 Chars To Enclose Selection=
 Default Mark Type=1
 Dynamic Word Wrap=true
@@ -128,6 +134,8 @@ State=AAAA/wAAAAD9AAAAAAAABVYAAAKrAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG
 ToolBarsMovable=Disabled
 Width 1366=1366
 Window-Maximized 768x1366=true
+eDP-1 Height 1366x768=718
+eDP-1 Width 1366x768=1366
 
 [UiSettings]
 ColorScheme=Breeze Dark
@@ -136,6 +144,8 @@ ColorScheme=Breeze Dark
 editShade=33,84,111
 listMode=false
 shadingEnabled=true
+showCloseButton=false
 showFullPathOnRoots=false
+showToolbar=true
 sortRole=0
 viewShade=66,73,74

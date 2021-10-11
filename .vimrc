@@ -1,19 +1,14 @@
+syntax enable
+
 se nocompatible
-
-if exists('py2') && has('python')
-elsei has('python3')
-en
-
+se path+=**
+se wildmenu
 se showcmd
 se relativenumber
 se number
-syntax enable
-
 let mapleader="\<space>"
 se splitbelow
 se splitright
-
-se path=**
 se autoindent
 se noexpandtab
 se tabstop=2
@@ -21,63 +16,71 @@ se shiftwidth=2
 se softtabstop=2
 se scrolloff=3
 se regexpengine=0
-
 se ruler
 se nowrap
-se wildmenu
 se hlsearch
-se diffopt=vertical
+se diffopt=vertical,algorithm:minimal
 se termguicolors
 se timeoutlen=500
-
+se title
 se shortmess+=c
-se nobackup
 se nowritebackup
 se pyxversion=3
 se hidden
+se undofile
+se inccommand=split
+se undodir=$HOME/.vim/undodir
+se spl=es_mx
 
-nn Q <nop>
-nn \\ :let @/ = ""<cr>
-nm <leader>y "+y
-nm <leader>p "+p
-vn <leader>y "+y
-vn <leader>p "+p
-
-vn J :m '>+1<cr>gv=gv
-vn K :m '<-2<cr>gv=gv
-
-nn <leader># :so $MYVIMRC<cr>
-
+" Save position and folds on exit, and load them on enter
 se viewoptions=folds,cursor
-augroup AutoSaveFolds
-	autocmd!
-	autocmd BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview
-	autocmd BufWinEnter ?* silent! loadview
-augroup end
+aug AutoSaveFolds
+	au!
+	au BufWinLeave,BufLeave,BufWritePost ?* nested silent! mkview
+	au BufWinEnter ?* silent! loadview
+aug end
 
-ino `<< «
-ino `>> »
-
+" Draw line on 81 column, for readability
 se textwidth=80
 if (exists('+colorcolumn'))
-	se colorcolumn=81
-	highlight ColorColumn guibg=#5f8700 ctermbg=8
-en
+	se colorcolumn=+1,+3
+end
 
-se lazyredraw
-se inccommand=split
-se foldmethod=indent
-
-se updatetime=200
+nn Q <nop>
+" Remove last search - clear highlight
+nn \\ :let @/ = ""<cr>
+nn <leader># :so $MYVIMRC<cr>
 nn <C-S> :up<cr>
 nn <C-_> :Bclose<cr>
 nn <leader>q :bd<cr>
 nn <leader>e :Vex<cr>
-
 nn <C-Tab> :bn<cr>
 nn <C-S-Tab> :bp<cr>
+" Remove blank spaces at end of lines
+nn <leader>s :%s/\s\+$//e<cr>
+nn <leader>ev :e $HOME/.vimrc<cr>
+nn <leader>ep :e $HOME/.vim/plugins.vim<cr>
 
-se undofile
+nm <leader>y "+y
+nm <leader>p "+p
+
+vn <leader>y "+y
+vn <leader>p "+p
+vn J :m '>+1<cr>gv=gv
+vn K :m '<-2<cr>gv=gv
+
+ino `<< «
+ino `>> »
+ino <C-c> <esc>
+
+au BufRead,BufNewFile *.blade.php se filetype=blade
+au BufRead,BufNewFile *.vifm se filetype=vim
+
+" Highlight yanked area
+aug LuaHighlight
+	au!
+	au TextYankPost * silent! lua require'vim.highlight'.on_yank()
+aug END
 
 " Use with anne pro 2 dvorak layout (es layout)
 " no ñ :
@@ -86,43 +89,10 @@ se undofile
 no ; :
 no : ;
 
-nn <leader>s :%s/\s\+$//e<cr>
-
-se undodir=$HOME/.vim/undodir
-nn <leader>ev :e $HOME/.vimrc<cr>
-nn <leader>ep :e $HOME/.vim/plugins.vim<cr>
-
-autocmd BufRead,BufNewFile *.blade.php se filetype=blade
-autocmd BufRead,BufNewFile *.vifm se filetype=vim
-autocmd BufReadPost *.doc,*.docx,*.rtf,*.odp,*.odt
-			\ silent %!pandoc "%" -tplain -o /dev/stdout
-
-augroup LuaHighlight
-	autocmd!
-	autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
-augroup END
-
-let g:netrw_liststyle=3
-let g:netrw_banner=0
-let g:netrw_browse_split=4
-let g:netrw_winsize=25
-
-fu! InitialBackground()
-	let l:st = split("10:00", ":")
-	let l:end = split("19:00", ":")
-	let l:now = split(strftime("%H:%M"), ":")
-
-	let l:stNow = ((l:now[0] * 60 + l:now[1]) - (l:st[0] * 60 + l:st[1]))
-	let l:nowEnd = ((l:now[0] * 60 + l:now[1]) - (l:end[0] * 60 + l:end[1]))
-
-	if (l:stNow > 0 && l:nowEnd < 0)
-		se background=light
-	el
-		se background=dark
-	en
-endf
-
-call InitialBackground()
-
 so $HOME/.vim/plugins.vim
-so $HOME/.vim/functions.vim
+so $HOME/.vim/functions.vim " Has initial background function
+
+nnoremap <silent> <F11> :set spell!<cr>
+inoremap <silent> <F11> <C-O>:set spell!<cr>
+
+cal InitialBackground("10:00", "19:00")

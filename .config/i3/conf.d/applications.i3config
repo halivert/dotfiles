@@ -12,5 +12,6 @@ bindsym $mod+$alt+p exec pavucontrol
 bindsym $mod+$alt+c exec $HOME/.bin/vscode
 bindsym $mod+$alt+n exec nemo
 bindsym $mod+$alt+s exec signal-desktop
+bindsym $mod+$alt+z exec zoom
 
 exec --no-startup-id kdeconnect-indicator

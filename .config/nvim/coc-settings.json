@@ -1,6 +1,6 @@
 {
 	"diagnostic.virtualText": true,
-	"diagnostic.virtualTextCurrentLineOnly": false,
+	"diagnostic.virtualTextCurrentLineOnly": true,
 	"diagnostic.enable": false,
 	"phpls.path": "/home/hali/Documents/Playground/Php/Intelephense",
 	"phpls.enable": true,
@@ -19,7 +19,6 @@
 		"liquid": ["markdown"],
 		"vimwiki": ["markdown"]
 	},
-	"coc.source.emoji.filetypes": null,
 	"languageserver": {},
 	"npm.binPath": "yarn",
 	"tsserver.watchOptions": {

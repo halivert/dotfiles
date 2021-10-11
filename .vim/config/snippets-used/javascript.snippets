@@ -17,3 +17,21 @@ $.ajax({
   $0
 });
 endsnippet
+
+snippet reactComponent "React component"
+import React from "react";
+
+export default function `!p snip.rv = snip.basename`({ $1 }) {
+  $0
+};
+endsnippet
+
+snippet simpleExport "Simple export"
+export default ${1:async} function ${2:main}($3) {
+  $0
+}
+endsnippet
+
+snippet returnPromise "Return promise"
+return new Promise((resolve) => resolve($0));
+endsnippet
