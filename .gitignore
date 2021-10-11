@@ -8,5 +8,6 @@ __pycache__/
 vifminfo.json
 .yarnrc
 .ignore
+.dotfiles/
 
 wiki_list.vim
