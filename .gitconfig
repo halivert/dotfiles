@@ -11,3 +11,5 @@
 [pull]
   ff = only
   rebase = false
+[merge]
+  ff = no

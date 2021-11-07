@@ -84,3 +84,20 @@ snippet screenshot "Function for dusk screenshot"
 ${1:->}screenshot("${2:\{$this->testPrefix\} $3}")${0:;}
 endsnippet
 
+snippet startTest "Start test for browser's"
+protected $testPrefix = '$1';
+
+/** @test */
+public function initialTest()
+{
+	$this->artisan('migrate:fresh');
+
+	$this->artisan('db:seed', [
+		'class' => StartSeeder::class,
+	]);
+
+	${0:Area::factory()->withNewResponsible()
+		->has(Process::factory()->count(3))
+		->count(3)->create();}
+}
+endsnippet

@@ -1,4 +1,5 @@
 {
+	"suggest.autoTrigger": "none",
 	"diagnostic.virtualText": true,
 	"diagnostic.virtualTextCurrentLineOnly": true,
 	"diagnostic.enable": false,

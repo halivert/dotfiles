@@ -33,6 +33,7 @@ alias gs="git status"
 alias gss="git status -s"
 alias gsw="git switch"
 alias gt="git tag --sort version:refname"
+alias ggcp="git gc --prune=\"0 days\""
 
 alias lserve="php -S localhost:8000 -t public"
 alias queue="sail artisan queue:work"

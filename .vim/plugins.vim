@@ -14,6 +14,7 @@ Plug 'bronson/vim-visual-star-search'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'mboughaba/i3config.vim'
+Plug 'github/copilot.vim'
 
 if has('nvim')
 	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -174,14 +175,16 @@ nn <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
 " |-----|
 " | Coc |
 " |-----|
+
 ino <silent><expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 ino <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
 
 ino <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<cr>"
 ino <silent><expr> <C-j> pumvisible() ? coc#_select_confirm() : "\<cr>"
 
-let g:coc_snippet_next='<tab>'
-let g:coc_snippet_prev='<s-tab>'
+let g:coc_suggest_disable = 1
+let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_prev = '<s-tab>'
 
 nm <silent> gd <plug>(coc-definition)
 nm <silent> gy <plug>(coc-type-definition)
