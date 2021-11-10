@@ -7,17 +7,14 @@ export TEXMFHOME="/home/hali/.texmf"
 export TEXMFDIST="/usr/share/texmf-dist"
 export TERM="alacritty"
 export TERMINAL=$TERM
-export JAIL="/srv/http"
 export HISTCONTROL=ignoreboth
 export GOPATH="/home/hali/.go"
 
-export BLOGPATH="$HOME/Documents/Playground/Git/halivert.dev"
-export WORKPATH="$HOME/Documents/Work/Asgo"
-export PLAYGROUNDPATH="$HOME/Documents/Playground"
-export COMPONENTSPATH="$PLAYGROUNDPATH/Js/Vue/Base/components"
+export BLOGPATH="$HOME/Documents/Code/Halivert/halivert.dev"
+export WORKPATH="$HOME/Documents/Code/Asgo"
 export JWPATH="$HOME/Documents/JW"
 
-export MANPAGER="nvim -c 'set ft=man' -"
+#export MANPAGER="nvim -c 'set ft=man' -"
 
 PATH="$PATH:/home/hali/.bin"
 PATH="$PATH:/home/hali/.config/composer/vendor/bin"

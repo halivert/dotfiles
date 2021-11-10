@@ -1,0 +1,5 @@
+#!/bin/sh
+
+I3CONFDIR=${I3CONFDIR:-$HOME/.config/i3}
+cat $I3CONFDIR/conf.d/*.i3config > $I3CONFDIR/config
+echo "Config created"

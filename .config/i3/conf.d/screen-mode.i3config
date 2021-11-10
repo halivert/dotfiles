@@ -4,13 +4,13 @@
 
 set $m_screen Screen mode
 mode "$m_screen" {
-	bindsym o exec --no-startup-id "$HOME/.bin/only-second-screen"
-	bindsym h exec --no-startup-id "$HOME/.bin/default-screen-setup --left-of"
-	bindsym l exec --no-startup-id "$HOME/.bin/default-screen-setup --right-of"
+	bindsym o exec --no-startup-id "xrandr --output eDP-1 --off"
+	bindsym h exec --no-startup-id "xrandr --output HDMI-1 --left-of eDP-1"
+	bindsym l exec --no-startup-id "xrandr --output HDMI-1 --right-of eDP-1"
 	bindsym Control+o exec --no-startup-id "xrandr --output HDMI-1 --off"
-	bindsym s exec --no-startup-id "$HOME/.bin/default-screen-setup --same-as"
-	bindsym k exec --no-startup-id "$HOME/.bin/default-screen-setup --above"
-	bindsym j exec --no-startup-id "$HOME/.bin/default-screen-setup --below"
+	bindsym s exec --no-startup-id "xrandr --output HDMI-1 --same-as eDP-1"
+	bindsym k exec --no-startup-id "xrandr --output HDMI-1 --above eDP-1"
+	bindsym j exec --no-startup-id "xrandr --output HDMI-1 --below eDP-1"
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
