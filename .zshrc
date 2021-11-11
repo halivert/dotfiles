@@ -2,6 +2,8 @@
 
 fpath=(~/.zsh $fpath)
 
+export XDG_CONFIG_HOME="$HOME/.config"
+
 export EDITOR="nvim"
 export TEXMFHOME="/home/hali/.texmf"
 export TEXMFDIST="/usr/share/texmf-dist"
