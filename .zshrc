@@ -11,12 +11,10 @@ export TERM="alacritty"
 export TERMINAL=$TERM
 export HISTCONTROL=ignoreboth
 export GOPATH="/home/hali/.go"
-
 export BLOGPATH="$HOME/Documents/Code/Halivert/halivert.dev"
 export WORKPATH="$HOME/Documents/Code/Asgo"
 export JWPATH="$HOME/Documents/JW"
-
-#export MANPAGER="nvim -c 'set ft=man' -"
+export GPG_TTY=$(tty)
 
 PATH="$PATH:/home/hali/.bin"
 PATH="$PATH:/home/hali/.config/composer/vendor/bin"

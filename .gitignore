@@ -9,5 +9,6 @@ vifminfo.json
 .yarnrc
 .ignore
 .dotfiles/
+.zsh_history
 
 wiki_list.vim

@@ -6,6 +6,7 @@
 [user]
   email = halivelazquez@outlook.com
   name = Halí V.
+	signingKey = 86C5CA92
 [core]
   autocrlf = input
 [pull]
@@ -15,3 +16,7 @@
   ff = no
 [credential]
 	helper = /usr/lib/git-core/git-credential-libsecret
+[config]
+	gpgSign = true
+[commit]
+	gpgSign = true
