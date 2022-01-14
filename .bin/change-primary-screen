@@ -1,0 +1,14 @@
+#!/bin/sh
+
+PRIMARY=$(xrandr --prop | rg primary | awk '{ print $1 }')
+NONPRIMARY=$(xrandr --prop | rg connected | rg -v primary | awk '{ print $1 }')
+
+xrandr --output $PRIMARY --noprimary
+xrandr --output $NONPRIMARY --primary
+
+sed -i \
+	-e "5 s/$PRIMARY/$NONPRIMARY/" \
+	-e "6 s/$NONPRIMARY/$PRIMARY/" \
+	$HOME/.config/i3/conf.d/20-workspaces.i3config
+
+$HOME/.bin/i3-mkconfig && i3-msg restart
