@@ -6,7 +6,7 @@ alias dof="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 
 alias goBlog="cd $BLOGPATH"
 alias goJW="cd $JWPATH"
-alias goPlayground="cd $PLAYGROUNDPATH"
+alias goCode="cd $CODEPATH"
 alias goWork="cd $WORKPATH"
 alias goDotfiles="cd $HOME/.dotfiles"
 

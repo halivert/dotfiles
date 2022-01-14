@@ -11,10 +11,13 @@ export TERM="alacritty"
 export TERMINAL=$TERM
 export HISTCONTROL=ignoreboth
 export GOPATH="/home/hali/.go"
-export BLOGPATH="$HOME/Documents/Code/Halivert/halivert.dev"
-export WORKPATH="$HOME/Documents/Code/Asgo"
-export JWPATH="$HOME/Documents/JW"
+export MNTPATH="/run/media/hali/"
 export GPG_TTY=$(tty)
+
+export CODEPATH="$HOME/Documents/Code"
+export BLOGPATH="$HOME/Documents/Code/halivert.dev"
+export WORKPATH="$HOME/Documents/Projects"
+export JWPATH="$HOME/Documents/JW"
 
 PATH="$PATH:/home/hali/.bin"
 PATH="$PATH:/home/hali/.config/composer/vendor/bin"
@@ -23,6 +26,7 @@ PATH="$PATH:/home/hali/.yarn/bin"
 PATH="$PATH:/home/hali/.npm/bin"
 PATH="$PATH:/home/hali/.local/bin"
 PATH="$PATH:/home/hali/.go/bin"
+PATH="$PATH:/home/hali/.cargo/bin"
 
 # Prompt only last 3 directories from PWD
 function min_path_prompt () {
