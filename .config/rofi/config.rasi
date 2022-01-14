@@ -2,6 +2,7 @@ configuration {
 	modi: "drun,combi";
 	combi-modi: "window,drun";
 	show-icons: true;
+	font: "Iosevka 11";
 	icon-theme: "Papirus Dark";
 }
 

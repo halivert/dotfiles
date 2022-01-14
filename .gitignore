@@ -1,4 +1,6 @@
-config/alacritty/colors/
+.config/alacritty/colors/
+.config/alacritty/themes/
+.config/vifm/colors/
 vifminfo
 .esdauth
 .esd_auth
@@ -10,5 +12,8 @@ vifminfo.json
 .ignore
 .dotfiles/
 .zsh_history
+Documents/
+Pictures/
+Videos/
 
 wiki_list.vim
