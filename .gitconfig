@@ -1,8 +1,6 @@
 [init]
   templatedir = ~/.git_template
   defaultBranch = main
-[alias]
-  ctags = !.git/hooks/ctags
 [user]
   email = halivelazquez@outlook.com
   name = Halí V.
@@ -17,4 +15,4 @@
 [credential]
   helper = /usr/lib/git-core/git-credential-libsecret
 [commit]
-	gpgSign = true
+  gpgSign = true
