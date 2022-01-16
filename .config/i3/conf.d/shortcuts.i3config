@@ -21,13 +21,12 @@ bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id light -A 5%
 bindsym Shift+XF86AudioLowerVolume exec --no-startup-id light -U 5%
 
 bindsym $mod+Shift+b exec --no-startup-id $HOME/.local/bin/alacritty-colorscheme -C $HOME/.config/alacritty/colors toggle
-
 bindsym $mod+q kill
 
 bindsym Print exec --no-startup-id $HOME/.bin/snap full
 bindsym Shift+Print exec --no-startup-id $HOME/.bin/snap area
 
 bindsym $mod+u [urgent=latest] focus
-
 bindsym $mod+period exec --no-startup-id splatmoji type
 
+bindsym $mod+Control+z exec --no-startup-id $HOME/.bin/change-primary-screen
