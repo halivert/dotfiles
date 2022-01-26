@@ -49,6 +49,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install --production
 Plug 'parkr/vim-jekyll'
 Plug 'tpope/vim-liquid'
 
+" Latex
+Plug 'lervag/vimtex'
+
 " Themes
 Plug 'rafi/awesome-vim-colorschemes'
 cal plug#end()
@@ -172,6 +175,7 @@ nn <leader>vca :lua vim.lsp.buf.code_action()<CR>
 nn <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
 nn <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
 
+
 " |-----|
 " | Coc |
 " |-----|
@@ -217,6 +221,12 @@ let g:test#preserve_screen = 1
 " | editorconfig |
 " |--------------|
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+
+
+" |-------|
+" | Latex |
+" |-------|
+let g:vimtex_view_method = 'zathura'
 
 
 " |--------|
