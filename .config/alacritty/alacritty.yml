@@ -1,6 +1,7 @@
 window:
   title: Terminal
   dynamic_padding: true
+  opacity: 0.93
 
 font:
   normal:
@@ -18,8 +19,6 @@ font:
   size: 13
 
   draw_bold_text_with_bright_colors: true
-
-background_opacity: 0.93
 
 mouse:
   hide_when_typing: true
