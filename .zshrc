@@ -124,3 +124,5 @@ bindkey "^e" edit-command-line
 
 # Disable <C-s> pause terminal
 stty -ixon
+
+source /usr/share/nvm/init-nvm.sh
