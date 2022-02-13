@@ -49,7 +49,13 @@ zstyle ':prompt:grml:right:setup' use-rprompt false
 _Tp="$(cat /proc/$(echo $$)/stat | cut -d \  -f 4)"
 _Tn="$(ps -f -p $_Tp | tail -1 | sed 's/^.* //')"
 _Tx="$(basename '/'$_Tn)"
-_DirNum="$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num' -r)"
+
+if [ "i3" = $DESKTOP_SESSION ]; then
+	_DirNum="$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num' -r)"
+else
+	_DirNum="default"
+fi
+
 _CurrentDirFile="$HOME/.currentDirs/$_DirNum"
 unset _Tp _Tn _DirNum
 if [ $_Tx = "alacritty" ] || [ $_Tx = "konsole" ]; then

@@ -16,6 +16,7 @@ floating_modifier $mod
 
 font pango: Montserrat 12
 
+exec --no-startup-id $HOME/.fehbg
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 

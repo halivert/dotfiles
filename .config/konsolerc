@@ -39,6 +39,7 @@ Width 1920=1920
 Window-Maximized 800x1280=true
 eDP-1 HDMI-1 Height 1366x768=740
 eDP-1 HDMI-1 Width 1366x768=1366
+eDP-1 HDMI-1 Window-Maximized 1366x768=true
 eDP-1 HDMI-1 XPosition 1366x768=0
 eDP-1 HDMI-1 YPosition 1366x768=796
 eDP-1 Height 1366x768=718
