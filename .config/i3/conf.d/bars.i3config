@@ -10,27 +10,27 @@ set $color-active_workspace #282828 #D79921 #282828
 set $color-binding_mode #282828 #458588 #282828
 set $color-urgent_workspace #282828 #CC241D #282828
 
-# bar {
-# 	id primary_bar
-# 	output primary
-# 	status_command i3status
-# 	tray_output primary
-# 	tray_padding 6 px
-# 	position top
-# 	workspace_buttons yes
-# 	strip_workspace_numbers yes
-#
-# 	colors {
-# 		background $color-background
-# 		statusline $color-statusline
-# 		separator $color-separator
-# 		focused_workspace $color-focused_workspace
-# 		active_workspace $color-active_workspace
-#
-# 		binding_mode $color-binding_mode
-# 		urgent_workspace $color-binding_mode_indicator
-# 	}
-# }
+bar {
+	id primary_bar
+	output primary
+	status_command i3status
+	tray_output primary
+	tray_padding 6 px
+	position top
+	workspace_buttons yes
+	strip_workspace_numbers yes
+
+	colors {
+		background $color-background
+		statusline $color-statusline
+		separator $color-separator
+		focused_workspace $color-focused_workspace
+		active_workspace $color-active_workspace
+
+		binding_mode $color-binding_mode
+		urgent_workspace $color-binding_mode_indicator
+	}
+}
 
 bar {
 	id secondary_bar

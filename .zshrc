@@ -50,10 +50,10 @@ _Tp="$(cat /proc/$(echo $$)/stat | cut -d \  -f 4)"
 _Tn="$(ps -f -p $_Tp | tail -1 | sed 's/^.* //')"
 _Tx="$(basename '/'$_Tn)"
 
-if [ "i3" = $DESKTOP_SESSION ]; then
-	_DirNum="$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num' -r)"
+if [[ i3-msg ]]; then
+	_DirNum="dir"
 else
-	_DirNum="default"
+	_DirNum="$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num' -r)"
 fi
 
 _CurrentDirFile="$HOME/.currentDirs/$_DirNum"

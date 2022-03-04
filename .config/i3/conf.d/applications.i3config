@@ -3,7 +3,7 @@
 # |--------------|
 
 bindsym $mod+$alt+t exec /opt/Telegram/Telegram
-bindsym $mod+$alt+b exec /bin/firefox-developer-edition
+bindsym $mod+$alt+b exec /bin/firefox
 bindsym $mod+$alt+m exec /usr/bin/thunderbird
 bindsym $mod+$alt+d exec /bin/discord
 bindsym $mod+$alt+4 exec /bin/TogglDesktop

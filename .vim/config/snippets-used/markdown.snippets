@@ -160,3 +160,41 @@ endsnippet
 snippet dd/mm/yyyy "Day and month"
 `date "+%d/%m/%Y"`
 endsnippet
+
+snippet api-request "API request"
+## ${1:title}
+
+**HTTP Request**
+
+\`${2:GET} ${3:/api/v1/$4}\`
+
+**Uri parameters**
+
+| Key    | Description                               |
+|--------|-------------------------------------------|
+| offset | Integer. Offset for the query. Default: 0 |
+| limit  | Integer. Limit for the query. Default: 10 |
+
+**Response**
+
+:::: code-group
+::: code-group-item Example
+\`\`\`json
+\`\`\`
+:::
+::::
+endsnippet
+
+snippet code-group "Code group"
+:::: code-group
+$0
+::::
+endsnippet
+
+snippet code-group-item "Code group item"
+::: code-group-item ${1:Example}
+\`\`\`${2:json}
+$0
+\`\`\`
+:::
+endsnippet

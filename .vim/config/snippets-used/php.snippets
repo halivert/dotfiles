@@ -101,3 +101,7 @@ public function initialTest()
 		->count(3)->create();}
 }
 endsnippet
+
+snippet LOG "Log for laravel"
+\Illuminate\Support\Facades\Log::${1:info}($0);
+endsnippet

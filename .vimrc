@@ -43,7 +43,7 @@ aug end
 " Draw line on 81 column, for readability
 se textwidth=80
 if (exists('+colorcolumn'))
-	se colorcolumn=+1,+3
+	se colorcolumn=+1
 end
 
 nn Q <nop>
