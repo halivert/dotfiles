@@ -4,7 +4,7 @@
 [user]
   email = halivelazquez@outlook.com
   name = Halí V.
-  signingKey = 86C5CA92
+  signingKey = F328FC66
 [core]
   autocrlf = input
 [pull]
