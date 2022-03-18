@@ -54,8 +54,8 @@ nn <C-S> :up<cr>
 nn <C-_> :Bclose<cr>
 nn <leader>q :bd<cr>
 nn <leader>e :Vex<cr>
-nn <C-Tab> :bn<cr>
-nn <C-S-Tab> :bp<cr>
+nn <Tab> :bn<cr>
+nn <S-Tab> :bp<cr>
 " Remove blank spaces at end of lines
 nn <leader>s :%s/\s\+$//e<cr>
 nn <leader>ev :e $HOME/.vimrc<cr>
