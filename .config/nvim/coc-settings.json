@@ -3,23 +3,9 @@
 	"diagnostic.virtualText": true,
 	"diagnostic.virtualTextCurrentLineOnly": true,
 	"diagnostic.enable": false,
-	"phpls.path": "/home/hali/Documents/Playground/Php/Intelephense",
-	"phpls.enable": true,
-	"intelephense.files.exclude": [
-		"**/.git/**",
-		"**/.svn/**",
-		"**/.hg/**",
-		"**/CVS/**",
-		"**/.DS_Store/**",
-		"**/node_modules/**"
-	],
-	"snippets.userSnippetsDirectory": "/home/hali/.vim/snippets-used",
+	"snippets.userSnippetsDirectory": "$HOME/.vim/snippets-used",
 	"snippets.loadFromExtensions": false,
-	"snippets.extends": {
-		"blade": ["html"],
-		"liquid": ["markdown"],
-		"vimwiki": ["markdown"]
-	},
+	"snippets.extends": {},
 	"languageserver": {},
 	"npm.binPath": "yarn",
 	"tsserver.watchOptions": {

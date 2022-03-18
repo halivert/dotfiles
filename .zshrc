@@ -5,12 +5,10 @@ fpath=(~/.zsh $fpath)
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export EDITOR="nvim"
-export TEXMFHOME="/home/hali/.texmf"
+export TEXMFHOME="$HOME/hali/.texmf"
 export TEXMFDIST="/usr/share/texmf-dist"
-export TERM="alacritty"
-export TERMINAL=$TERM
 export HISTCONTROL=ignoreboth
-export GOPATH="/home/hali/.go"
+export GOPATH="$HOME/hali/.go"
 export MNTPATH="/run/media/hali/"
 export GPG_TTY=$(tty)
 
@@ -19,14 +17,14 @@ export BLOGPATH="$HOME/Documents/Code/halivert.dev"
 export WORKPATH="$HOME/Documents/Projects"
 export JWPATH="$HOME/Documents/JW"
 
-PATH="$PATH:/home/hali/.bin"
-PATH="$PATH:/home/hali/.config/composer/vendor/bin"
-PATH="$PATH:/home/hali/.local/share/gem/ruby/3.0.0/bin"
-PATH="$PATH:/home/hali/.yarn/bin"
-PATH="$PATH:/home/hali/.npm/bin"
-PATH="$PATH:/home/hali/.local/bin"
-PATH="$PATH:/home/hali/.go/bin"
-PATH="$PATH:/home/hali/.cargo/bin"
+PATH="$PATH:$HOME/hali/.bin"
+PATH="$PATH:$HOME/hali/.config/composer/vendor/bin"
+PATH="$PATH:$HOME/hali/.local/share/gem/ruby/3.0.0/bin"
+PATH="$PATH:$HOME/hali/.yarn/bin"
+PATH="$PATH:$HOME/hali/.npm/bin"
+PATH="$PATH:$HOME/hali/.local/bin"
+PATH="$PATH:$HOME/hali/.go/bin"
+PATH="$PATH:$HOME/hali/.cargo/bin"
 
 # Prompt only last 3 directories from PWD
 function min_path_prompt () {
@@ -44,32 +42,6 @@ zstyle ':prompt:grml:left:setup' items user at host min-path vcs virtualenv newl
 zstyle ':prompt:grml:*:items:user' pre '%F{166}'
 zstyle ':prompt:grml:*:items:percent' pre '%f'
 zstyle ':prompt:grml:right:setup' use-rprompt false
-
-# Change current directory when open new terminal
-_Tp="$(cat /proc/$(echo $$)/stat | cut -d \  -f 4)"
-_Tn="$(ps -f -p $_Tp | tail -1 | sed 's/^.* //')"
-_Tx="$(basename '/'$_Tn)"
-
-if [[ i3-msg ]]; then
-	_DirNum="dir"
-else
-	_DirNum="$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num' -r)"
-fi
-
-_CurrentDirFile="$HOME/.currentDirs/$_DirNum"
-unset _Tp _Tn _DirNum
-if [ $_Tx = "alacritty" ] || [ $_Tx = "konsole" ]; then
-	alias cd=changeDir;
-
-	changeDir() {
-		\cd $1;
-		pwd > "$_CurrentDirFile"
-	}
-
-	if [ -e $_CurrentDirFile ]; then
-		cd "$(cat $_CurrentDirFile)"
-	fi
-fi
 
 source ~/.zsh_aliases
 
@@ -131,4 +103,5 @@ bindkey "^e" edit-command-line
 # Disable <C-s> pause terminal
 stty -ixon
 
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
+source /opt/local/share/nvm/init-nvm.sh

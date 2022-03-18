@@ -2,9 +2,9 @@
   templatedir = ~/.git_template
   defaultBranch = main
 [user]
-  email = halivelazquez@outlook.com
-  name = Halí V.
-  signingKey = F328FC66
+	email = halivelazquez@outlook.com
+	name = Hali V.
+	signingKey = 5DCCBACF
 [core]
   autocrlf = input
 [pull]

@@ -13,8 +13,6 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'bronson/vim-visual-star-search'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'mboughaba/i3config.vim'
-Plug 'github/copilot.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
@@ -40,19 +38,9 @@ Plug 'junegunn/gv.vim'
 " Snippets
 Plug 'honza/vim-snippets'
 
-" PHP
-Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
-
 " Frontend
 Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install --production' }
-
-" Jekyll
-Plug 'parkr/vim-jekyll'
-Plug 'tpope/vim-liquid'
-
-" Latex
-Plug 'lervag/vimtex'
 
 " Themes
 Plug 'rafi/awesome-vim-colorschemes'
@@ -105,38 +93,6 @@ se signcolumn=yes
 let g:vue_disable_pre_processors=1
 
 
-" |--------|
-" | Jekyll |
-" |--------|
-let g:jekyll_post_extension='.md'
-let g:jekyll_post_filetype='markdown'
-let g:jekyll_post_template=[
-			\		'---',
-			\ 	'author: halivert',
-			\ 	'title: "JEKYLL_TITLE"',
-			\ 	'date: "JEKYLL_DATE"',
-			\ 	'category: ""',
-			\ 	'tags: []',
-			\ 	'---',
-			\ 	''
-			\ ]
-
-
-" |-----|
-" | Php |
-" |-----|
-no <leader>u :PhpactorImportClass<cr>
-no <leader>mm :PhpactorContextMenu<cr>
-no <leader>nn :PhpactorNavigate<cr>
-no <leader>o :PhpactorGotoDefinition<cr>
-no <leader>K :PhpactorHover<cr>
-no <leader>tt :PhpactorTransform<cr>
-no <leader>cc :PhpactorClassNew<cr>
-no <silent><leader>ee :PhpactorExtractExpression(v:false)<cr>
-vn <silent><leader>ee :PhpactorExtractExpression(v:true)<cr>
-vn <silent><leader>em :PhpactorExtractMethod<cr>
-
-
 " |-----|
 " | C++ |
 " |-----|
@@ -182,13 +138,23 @@ nn <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
 " | Coc |
 " |-----|
 
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+ino <silent><expr> <TAB>
+	\ pumvisible() ? "\<C-n>" :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ coc#refresh()
+
 ino <silent><expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
 ino <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
 
 ino <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<cr>"
 ino <silent><expr> <C-j> pumvisible() ? coc#_select_confirm() : "\<cr>"
 
-let g:coc_suggest_disable = 1
+" let g:coc_suggest_disable = 1
 let g:coc_snippet_next = '<tab>'
 let g:coc_snippet_prev = '<s-tab>'
 
@@ -225,18 +191,12 @@ let g:test#preserve_screen = 1
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 
-" |-------|
-" | Latex |
-" |-------|
-let g:vimtex_view_method = 'zathura'
-
-
 " |--------|
 " | Denite |
 " |--------|
 if has('nvim')
 	cal denite#custom#var('file/rec', 'command', [
-				\		'rg', '--files', '--hidden', '--no-ignore-vcs'
+				\		'rg', '--files', '--hidden',
 				\ ])
 
 	autocmd FileType denite cal s:denite_my_settings()
