@@ -236,7 +236,7 @@ let g:vimtex_view_method = 'zathura'
 " |--------|
 if has('nvim')
 	cal denite#custom#var('file/rec', 'command', [
-				\		'rg', '--files', '--hidden', '--no-ignore-vcs'
+				\		'rg', '--files', '--hidden',
 				\ ])
 
 	autocmd FileType denite cal s:denite_my_settings()
