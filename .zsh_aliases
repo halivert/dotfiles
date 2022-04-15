@@ -35,6 +35,7 @@ alias ggcp="git gc --prune=\"0 days\""
 
 alias ypr="yarn prod"
 alias yw="yarn watch"
+alias yyw="yarn && yarn watch"
 alias yd="yarn dev"
 alias ys="yarn start"
 alias yys="yarn && yarn start"

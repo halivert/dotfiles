@@ -159,9 +159,9 @@ nm <silent> gi <plug>(coc-implementation)
 nm <silent> gr <plug>(coc-references)
 nn <silent> grc <plug>(coc-rename)
 nm <silent> <leader>gf <plug>(coc-fix-current)
-com! -nargs=0 Format :cal CocAction('format')
+com! -nargs=0 Format :cal CocActionAsync('format')
 nn <leader>es :CocCommand snippets.editSnippets<cr>
-nn <leader>f :cal CocAction('format')<cr>
+nn <leader>f :cal CocActionAsync('format')<cr>
 ino <silent><expr> <C-Space> coc#refresh()
 nn <silent> <C-Space> :cal CocActionAsync('doHover')<cr>
 nn <silent> <leader>u :CocAction<cr>

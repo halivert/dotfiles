@@ -34,6 +34,7 @@ se undodir=$HOME/.vim/undodir
 se spl=es_mx
 se ut=300
 se signcolumn=yes
+se nuw=3
 
 " Save position and folds on exit, and load them on enter
 se viewoptions=folds,cursor
