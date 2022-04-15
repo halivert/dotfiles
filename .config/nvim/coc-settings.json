@@ -1,12 +1,9 @@
 {
-	"suggest.autoTrigger": "none",
-	"diagnostic.virtualText": true,
+	"diagnostic.virtualText": false,
 	"diagnostic.virtualTextCurrentLineOnly": true,
-	"diagnostic.enable": false,
+	"diagnostic.enable": true,
 	"snippets.userSnippetsDirectory": "$HOME/.vim/snippets-used",
 	"snippets.loadFromExtensions": false,
-	"snippets.extends": {},
-	"languageserver": {},
 	"npm.binPath": "yarn",
 	"tsserver.watchOptions": {
 		"excludeDirectories": ["node_modules", "vendor"]

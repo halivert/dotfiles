@@ -41,6 +41,7 @@ Plug 'honza/vim-snippets'
 " Frontend
 Plug 'mattn/emmet-vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install --production' }
+Plug 'delphinus/vim-firestore'
 
 " Themes
 Plug 'rafi/awesome-vim-colorschemes'
@@ -79,12 +80,6 @@ let g:airline#extensions#tabline#show_buffers=0
 let g:airline#extensions#tabline#tab_nr_type=1 " tab number
 let g:airline#extensions#tabline#show_close_button=0
 let g:airline#extensions#whitespace#mixed_indent_algo=2
-
-
-" |---------|
-" | Signify |
-" |---------|
-se signcolumn=yes
 
 
 " |-----|
@@ -162,12 +157,26 @@ nm <silent> gd <plug>(coc-definition)
 nm <silent> gy <plug>(coc-type-definition)
 nm <silent> gi <plug>(coc-implementation)
 nm <silent> gr <plug>(coc-references)
-nm <silent> grc <plug>(coc-rename-current)
+nn <silent> grc <plug>(coc-rename)
 nm <silent> <leader>gf <plug>(coc-fix-current)
 com! -nargs=0 Format :cal CocAction('format')
 nn <leader>es :CocCommand snippets.editSnippets<cr>
 nn <leader>f :cal CocAction('format')<cr>
-ino <silent><expr> <c-space> coc#refresh()
+ino <silent><expr> <C-Space> coc#refresh()
+nn <silent> <C-Space> :cal CocActionAsync('doHover')<cr>
+nn <silent> <leader>u :CocAction<cr>
+
+nn <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+	if (index(['vim','help'], &filetype) >= 0)
+	  execute 'h '.expand('<cword>')
+	elseif (coc#rpc#ready())
+	  call CocActionAsync('doHover')
+	else
+	  execute '!' . &keywordprg . " " . expand('<cword>')
+	endif
+endfunction
 
 let g:coc_sources_disable_map = {
 			\		'python': ['tag']

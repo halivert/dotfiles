@@ -17,14 +17,14 @@ export BLOGPATH="$HOME/Documents/Code/halivert.dev"
 export WORKPATH="$HOME/Documents/Projects"
 export JWPATH="$HOME/Documents/JW"
 
-PATH="$PATH:$HOME/hali/.bin"
-PATH="$PATH:$HOME/hali/.config/composer/vendor/bin"
-PATH="$PATH:$HOME/hali/.local/share/gem/ruby/3.0.0/bin"
-PATH="$PATH:$HOME/hali/.yarn/bin"
-PATH="$PATH:$HOME/hali/.npm/bin"
-PATH="$PATH:$HOME/hali/.local/bin"
-PATH="$PATH:$HOME/hali/.go/bin"
-PATH="$PATH:$HOME/hali/.cargo/bin"
+PATH="$PATH:$HOME/.bin"
+PATH="$PATH:$HOME/.config/composer/vendor/bin"
+PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
+PATH="$PATH:$HOME/.yarn/bin"
+PATH="$PATH:$HOME/.npm/bin"
+PATH="$PATH:$HOME/.local/bin"
+PATH="$PATH:$HOME/.go/bin"
+PATH="$PATH:$HOME/.cargo/bin"
 
 # Prompt only last 3 directories from PWD
 function min_path_prompt () {

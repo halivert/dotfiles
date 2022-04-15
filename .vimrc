@@ -24,6 +24,7 @@ se termguicolors
 se timeoutlen=500
 se title
 se shortmess+=c
+se nobackup
 se nowritebackup
 se pyxversion=3
 se hidden
@@ -31,6 +32,8 @@ se undofile
 se inccommand=split
 se undodir=$HOME/.vim/undodir
 se spl=es_mx
+se ut=300
+se signcolumn=yes
 
 " Save position and folds on exit, and load them on enter
 se viewoptions=folds,cursor
@@ -72,6 +75,7 @@ vn K :m '<-2<cr>gv=gv
 ino `<< «
 ino `>> »
 ino <C-c> <esc>
+nn <C-c> <esc>
 
 au BufRead,BufNewFile *.blade.php se filetype=blade
 au BufRead,BufNewFile *.vifm se filetype=vim
@@ -95,5 +99,6 @@ so $HOME/.vim/functions.vim " Has initial background function
 nnoremap <silent> <F11> :set spell!<cr>
 inoremap <silent> <F11> <C-O>:set spell!<cr>
 tnoremap <Esc> <C-\><C-n>
+command! BufOnly silent! execute "%bd|e#|bd#"
 
 cal InitialBackground("10:00", "19:00")

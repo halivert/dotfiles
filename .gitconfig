@@ -2,7 +2,7 @@
   templatedir = ~/.git_template
   defaultBranch = main
 [user]
-	email = halivelazquez@outlook.com
+	email = halivelazquez@ibm.com
 	name = Hali V.
 	signingKey = 5DCCBACF
 [core]
