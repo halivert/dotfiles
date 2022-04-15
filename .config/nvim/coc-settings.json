@@ -1,5 +1,4 @@
 {
-	"suggest.autoTrigger": "none",
 	"diagnostic.virtualText": true,
 	"diagnostic.virtualTextCurrentLineOnly": true,
 	"diagnostic.enable": false,
@@ -24,5 +23,7 @@
 	"npm.binPath": "yarn",
 	"tsserver.watchOptions": {
 		"excludeDirectories": ["node_modules", "vendor"]
-	}
+	},
+	"phpactor.enable": true,
+	"phpactor.path": "/home/hali/.config/composer/vendor/bin/phpactor"
 }

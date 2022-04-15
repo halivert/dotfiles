@@ -1274,6 +1274,9 @@ AlreadyImported=defaults,kde32b1,konqueror_gestures_kde321,konsole
 Disabled=false
 Version=2
 
+[Shortcuts]
+Quit[$d]
+
 [Voice]
 Shortcut=
 

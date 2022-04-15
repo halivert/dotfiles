@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "coc-css": ">=1.3.0",
+    "coc-json": ">=1.4.1",
+    "coc-phpactor": ">=1.0.3",
+    "coc-phpls": ">=2.2.2",
+    "coc-snippets": ">=3.0.8",
+    "coc-tsserver": ">=1.9.16"
+  }
+}

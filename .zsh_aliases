@@ -36,15 +36,19 @@ alias gt="git tag --sort version:refname"
 alias ggcp="git gc --prune=\"0 days\""
 
 alias lserve="php -S localhost:8000 -t public"
-alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+alias sail="[ -f sail ] && bash sail || bash vendor/bin/sail"
 alias queue="sail artisan queue:work"
 alias serve="WWWUSER=$(id -u) docker-compose up"
 alias tinker="sail artisan tinker"
+# alias tinker="docker exec -it alpha-laravel.test-1 php artisan tinker"
 
 alias sym="bin/console"
 
 alias ypr="yarn prod"
 alias yw="yarn watch"
+alias yyw="yarn && yarn watch"
 
 alias bserve="browser-sync start -s -f . --no-notify\
 	--host $(hostname -i | cut -d' ' -f1)"
+
+alias phpunit="./vendor/bin/phpunit"

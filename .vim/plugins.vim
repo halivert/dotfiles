@@ -14,7 +14,6 @@ Plug 'bronson/vim-visual-star-search'
 Plug 'sheerun/vim-polyglot'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'mboughaba/i3config.vim'
-Plug 'github/copilot.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 
@@ -39,9 +38,6 @@ Plug 'junegunn/gv.vim'
 
 " Snippets
 Plug 'honza/vim-snippets'
-
-" PHP
-Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install --no-dev -o'}
 
 " Frontend
 Plug 'mattn/emmet-vim'
@@ -125,16 +121,16 @@ let g:jekyll_post_template=[
 " |-----|
 " | Php |
 " |-----|
-no <leader>u :PhpactorImportClass<cr>
-no <leader>mm :PhpactorContextMenu<cr>
-no <leader>nn :PhpactorNavigate<cr>
-no <leader>o :PhpactorGotoDefinition<cr>
-no <leader>K :PhpactorHover<cr>
-no <leader>tt :PhpactorTransform<cr>
-no <leader>cc :PhpactorClassNew<cr>
-no <silent><leader>ee :PhpactorExtractExpression(v:false)<cr>
-vn <silent><leader>ee :PhpactorExtractExpression(v:true)<cr>
-vn <silent><leader>em :PhpactorExtractMethod<cr>
+" no <leader>u :PhpactorImportClass<cr>
+" no <leader>mm :PhpactorContextMenu<cr>
+" no <leader>nn :PhpactorNavigate<cr>
+" no <leader>o :PhpactorGotoDefinition<cr>
+" no <leader>K :PhpactorHover<cr>
+" no <leader>tt :PhpactorTransform<cr>
+" no <leader>cc :PhpactorClassNew<cr>
+" no <silent><leader>ee :PhpactorExtractExpression(v:false)<cr>
+" vn <silent><leader>ee :PhpactorExtractExpression(v:true)<cr>
+" vn <silent><leader>em :PhpactorExtractMethod<cr>
 
 
 " |-----|
@@ -198,10 +194,11 @@ nm <silent> gi <plug>(coc-implementation)
 nm <silent> gr <plug>(coc-references)
 nm <silent> grc <plug>(coc-rename-current)
 nm <silent> <leader>gf <plug>(coc-fix-current)
-com! -nargs=0 Format :cal CocAction('format')
+com! -nargs=0 Format :cal CocActionAsync('format')
 nn <leader>es :CocCommand snippets.editSnippets<cr>
-nn <leader>f :cal CocAction('format')<cr>
+nn <leader>f :cal CocActionAsync('format')<cr>
 ino <silent><expr> <c-space> coc#refresh()
+nn <leader>u :CocAction<cr>
 
 let g:coc_sources_disable_map = {
 			\		'python': ['tag']
