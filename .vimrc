@@ -102,4 +102,4 @@ inoremap <silent> <F11> <C-O>:set spell!<cr>
 tnoremap <Esc> <C-\><C-n>
 command! BufOnly silent! execute "%bd|e#|bd#"
 
-cal InitialBackground("10:00", "19:00")
+cal InitialBackground("8:00", "18:00")

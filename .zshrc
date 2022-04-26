@@ -5,10 +5,10 @@ fpath=(~/.zsh $fpath)
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export EDITOR="nvim"
-export TEXMFHOME="$HOME/hali/.texmf"
+export TEXMFHOME="$HOME/.texmf"
 export TEXMFDIST="/usr/share/texmf-dist"
 export HISTCONTROL=ignoreboth
-export GOPATH="$HOME/hali/.go"
+export GOPATH="$HOME/.go"
 export MNTPATH="/run/media/hali/"
 export GPG_TTY=$(tty)
 
