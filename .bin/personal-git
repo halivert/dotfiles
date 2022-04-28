@@ -1,0 +1,11 @@
+#! /usr/bin/env sh
+
+git config --local user.name "Hali V."
+git config --local user.email "halivelazquez@outlook.com"
+
+GPG_KEY=$1
+if [[ ! -z $GPG_KEY ]]; then
+	git config --local user.signingKey $GPG_KEY
+else
+	gpg --list-secret-keys --keyid-format short
+fi
