@@ -25,6 +25,7 @@ PATH="$PATH:$HOME/.npm/bin"
 PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.go/bin"
 PATH="$PATH:$HOME/.cargo/bin"
+PATH="$PATH:$HOME/Documents/google-cloud-sdk/bin"
 
 # Prompt only last 3 directories from PWD
 function min_path_prompt () {
@@ -103,5 +104,12 @@ bindkey "^e" edit-command-line
 # Disable <C-s> pause terminal
 stty -ixon
 
-# source /usr/share/nvm/init-nvm.sh
 source /opt/local/share/nvm/init-nvm.sh
+
+zstyle ':completion:*:*:git:*' script /opt/local/share/bash-completion/completions/git
+
+# The next line updates PATH for the Google Cloud SDK.
+# if [ -f '/Users/hali/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hali/Documents/google-cloud-sdk/path.zsh.inc'; fi
+
+# # The next line enables shell command completion for gcloud.
+# if [ -f '/Users/hali/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hali/Documents/google-cloud-sdk/completion.zsh.inc'; fi

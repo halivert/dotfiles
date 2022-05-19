@@ -41,6 +41,8 @@ alias ys="yarn start"
 alias yys="yarn && yarn start"
 alias yb="yarn build"
 alias yyb="yarn && yarn build"
+alias yyd="yarn && yarn dev"
+alias yd="yarn dev"
 
 alias k="kubectl"
 alias kp="kubectl get pods"
