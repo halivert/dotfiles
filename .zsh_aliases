@@ -47,6 +47,8 @@ alias sym="bin/console"
 alias ypr="yarn prod"
 alias yw="yarn watch"
 alias yyw="yarn && yarn watch"
+alias yyd="yarn && yarn dev"
+alias yd="yarn dev"
 
 alias bserve="browser-sync start -s -f . --no-notify\
 	--host $(hostname -i | cut -d' ' -f1)"

@@ -52,6 +52,8 @@ Plug 'lervag/vimtex'
 
 " Themes
 Plug 'rafi/awesome-vim-colorschemes'
+
+Plug 'github/copilot.vim'
 cal plug#end()
 
 
@@ -199,6 +201,16 @@ nn <leader>es :CocCommand snippets.editSnippets<cr>
 nn <leader>f :cal CocActionAsync('format')<cr>
 ino <silent><expr> <c-space> coc#refresh()
 nn <leader>u :CocAction<cr>
+
+nn <silent> K :call ShowDocumentation()<CR>
+
+fun! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  el
+    call feedkeys('K', 'in')
+  en
+endfun
 
 let g:coc_sources_disable_map = {
 			\		'python': ['tag']

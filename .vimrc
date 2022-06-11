@@ -96,5 +96,6 @@ so $HOME/.vim/functions.vim " Has initial background function
 nnoremap <silent> <F11> :set spell!<cr>
 inoremap <silent> <F11> <C-O>:set spell!<cr>
 tnoremap <Esc> <C-\><C-n>
+command! BufOnly silent! execute "%bd|e#|bd#"
 
 cal InitialBackground("10:00", "19:00")
