@@ -5,5 +5,6 @@ setl softtabstop=4
 setl commentstring=//\ %s
 
 nn <buffer> <A-F> :cal CocActionAsync('format')<cr>
+nn <leader>f :cal CocActionAsync('format')<cr>
 
 " let @x="\n\n	/* |----------------| */\n	/* | Business logic | */\n	/* |----------------| */"

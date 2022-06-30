@@ -33,6 +33,8 @@ Plug 'vim-airline/vim-airline'
 
 " Git
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'shumphrey/fugitive-gitlab.vim'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/gv.vim'
 
@@ -53,7 +55,7 @@ Plug 'lervag/vimtex'
 " Themes
 Plug 'rafi/awesome-vim-colorschemes'
 
-Plug 'github/copilot.vim'
+" Plug 'github/copilot.vim'
 cal plug#end()
 
 

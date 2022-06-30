@@ -1,7 +1,7 @@
 {
-	"diagnostic.virtualText": true,
+	"diagnostic.virtualText": false,
 	"diagnostic.virtualTextCurrentLineOnly": true,
-	"diagnostic.enable": false,
+	"diagnostic.enable": true,
 	"phpls.path": "/home/hali/Documents/Playground/Php/Intelephense",
 	"phpls.enable": true,
 	"intelephense.files.exclude": [
@@ -25,5 +25,7 @@
 		"excludeDirectories": ["node_modules", "vendor"]
 	},
 	"phpactor.enable": true,
-	"phpactor.path": "/home/hali/.config/composer/vendor/bin/phpactor"
+	"phpactor.path": "/home/hali/.config/composer/vendor/bin/phpactor",
+	"prettier.disableLanguages": ["vue"],
+	"svelte.enable-ts-plugin": true
 }
