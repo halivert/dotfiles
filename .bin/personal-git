@@ -1,11 +1,14 @@
 #! /usr/bin/env sh
 
-git config --local user.name "Hali V."
-git config --local user.email "halivelazquez@outlook.com"
+EMAIL="halivelazquez@outlook.com"
 
-GPG_KEY=$1
-if [[ ! -z $GPG_KEY ]]; then
-	git config --local user.signingKey $GPG_KEY
-else
-	gpg --list-secret-keys --keyid-format short
+ssh-add ~/.ssh/personal
+
+git rev-parse --is-inside-work-tree > /dev/null 2>&1
+
+if [ $? -eq 0 ]; then
+	git config --local user.name "Hali V."
+	git config --local user.email $EMAIL
+	git config --local user.signingKey $EMAIL
+	echo "Git config added"
 fi

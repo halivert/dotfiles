@@ -260,4 +260,6 @@ if has('nvim')
 	nn <silent> <space><space> :Denite buffer file/rec<cr>
 endif
 
+" im <C-Y><C-,> <Plug>(emmet-expand-abbr)
+
 colo gruvbox
