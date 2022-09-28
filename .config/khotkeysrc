@@ -1053,7 +1053,7 @@ Comment=Simple_action
 TriggersCount=1
 
 [Data_4_1Triggers0]
-Key=Meta+D
+Key=Meta+Space
 Type=SHORTCUT
 Uuid={6ca13963-abb1-4065-8570-a0f1b796df83}
 
@@ -1265,6 +1265,7 @@ Show Speedbar[$d]
 Show hidden files[$d]
 Sort by[$d]
 Sort directories first[$d]
+Sort hidden files last[$d]
 Sort reversed[$d]
 Speedbar Width[$d]
 View Style[$d]

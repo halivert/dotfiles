@@ -16,6 +16,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'mboughaba/i3config.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
+Plug 'rajasegar/vim-astro', { 'branch': 'main' }
 
 if has('nvim')
 	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -54,6 +55,9 @@ Plug 'lervag/vimtex'
 
 " Themes
 Plug 'rafi/awesome-vim-colorschemes'
+Plug 'artanikin/vim-synthwave84'
+
+Plug 'phpactor/phpactor', { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o' }
 
 " Plug 'github/copilot.vim'
 cal plug#end()
@@ -207,11 +211,11 @@ nn <leader>u :CocAction<cr>
 nn <silent> K :call ShowDocumentation()<CR>
 
 fun! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  el
-    call feedkeys('K', 'in')
-  en
+	if CocAction('hasProvider', 'hover')
+		call CocActionAsync('doHover')
+	el
+		call feedkeys('K', 'in')
+	en
 endfun
 
 let g:coc_sources_disable_map = {
@@ -302,4 +306,4 @@ if has('nvim')
 	nn <silent> <space><space> :Denite buffer file/rec<cr>
 endif
 
-colo gruvbox
+colo synthwave84

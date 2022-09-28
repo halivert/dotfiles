@@ -15,6 +15,9 @@ Favorites=Yakuake.profile,Gifs.profile,Yakuake-Day.profile
 scrollbackUseCacheLocation=true
 scrollbackUseSystemLocation=false
 
+[General]
+ConfigVersion=1
+
 [KFileDialog Settings]
 listViewIconSize=0
 
@@ -23,6 +26,10 @@ ShowMenuBarByDefault=false
 UseSingleInstance=true
 
 [MainWindow]
+HDMI-1 eDP-1 Height 1920x1080=740
+HDMI-1 eDP-1 Width 1920x1080=1366
+HDMI-1 eDP-1 XPosition 1920x1080=1643
+HDMI-1 eDP-1 YPosition 1920x1080=168
 Height 1080=1051
 Height 720=711
 Height 768=740
@@ -48,4 +55,4 @@ eDP-1 XPosition 1366x768=0
 eDP-1 YPosition 1366x768=50
 
 [UiSettings]
-ColorScheme=Default
+ColorScheme=
