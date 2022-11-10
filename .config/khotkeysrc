@@ -1119,7 +1119,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_4_4Actions0]
-CommandURL=firefox
+CommandURL=firefox-developer-edition
 Type=COMMAND_URL
 
 [Data_4_4Conditions]
@@ -1269,6 +1269,10 @@ Sort hidden files last[$d]
 Sort reversed[$d]
 Speedbar Width[$d]
 View Style[$d]
+
+[KScreen]
+ScaleFactor[$d]
+ScreenScaleFactors[$d]
 
 [Main]
 AlreadyImported=defaults,kde32b1,konqueror_gestures_kde321,konsole

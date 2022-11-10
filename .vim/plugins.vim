@@ -12,7 +12,6 @@ Plug 'vim-test/vim-test'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'bronson/vim-visual-star-search'
 Plug 'sheerun/vim-polyglot'
-Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'mboughaba/i3config.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
@@ -20,6 +19,11 @@ Plug 'rajasegar/vim-astro', { 'branch': 'main' }
 
 if has('nvim')
 	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'hrsh7th/nvim-cmp'
+	Plug 'williamboman/mason.nvim'
+	Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+	Plug 'mhartington/formatter.nvim'
 else
 	Plug 'Shougo/denite.nvim'
 	Plug 'roxma/nvim-yarp'
@@ -40,6 +44,7 @@ Plug 'mhinz/vim-signify'
 Plug 'junegunn/gv.vim'
 
 " Snippets
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Frontend
@@ -57,9 +62,8 @@ Plug 'lervag/vimtex'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'artanikin/vim-synthwave84'
 
+" PHP
 Plug 'phpactor/phpactor', { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o' }
-
-" Plug 'github/copilot.vim'
 cal plug#end()
 
 
@@ -171,56 +175,15 @@ nn <silent> t<c-g> :TestVisit<cr>
 " | LSP |
 " |-----|
 
-nn <leader>vd :lua vim.lsp.buf.definition()<CR>
-nn <leader>vi :lua vim.lsp.buf.implementation()<CR>
-nn <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
-nn <leader>vrr :lua vim.lsp.buf.references()<CR>
-nn <leader>vrn :lua vim.lsp.buf.rename()<CR>
-nn <leader>vh :lua vim.lsp.buf.hover()<CR>
-nn <leader>vca :lua vim.lsp.buf.code_action()<CR>
-nn <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
-nn <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
-
-
-" |-----|
-" | Coc |
-" |-----|
-
-ino <silent><expr> <tab> pumvisible() ? "\<c-n>" : "\<tab>"
-ino <expr><s-tab> pumvisible() ? "\<c-p>" : "\<c-h>"
-
-ino <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<cr>"
-ino <silent><expr> <C-j> pumvisible() ? coc#_select_confirm() : "\<cr>"
-
-let g:coc_suggest_disable = 1
-let g:coc_snippet_next = '<tab>'
-let g:coc_snippet_prev = '<s-tab>'
-
-nm <silent> gd <plug>(coc-definition)
-nm <silent> gy <plug>(coc-type-definition)
-nm <silent> gi <plug>(coc-implementation)
-nm <silent> gr <plug>(coc-references)
-nm <silent> grc <plug>(coc-rename-current)
-nm <silent> <leader>gf <plug>(coc-fix-current)
-com! -nargs=0 Format :cal CocActionAsync('format')
-nn <leader>es :CocCommand snippets.editSnippets<cr>
-nn <leader>f :cal CocActionAsync('format')<cr>
-ino <silent><expr> <c-space> coc#refresh()
-nn <leader>u :CocAction<cr>
-
-nn <silent> K :call ShowDocumentation()<CR>
-
-fun! ShowDocumentation()
-	if CocAction('hasProvider', 'hover')
-		call CocActionAsync('doHover')
-	el
-		call feedkeys('K', 'in')
-	en
-endfun
-
-let g:coc_sources_disable_map = {
-			\		'python': ['tag']
-			\ }
+" nn <leader>vd :lua vim.lsp.buf.definition()<CR>
+" nn <leader>vi :lua vim.lsp.buf.implementation()<CR>
+" nn <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
+" nn <leader>vrr :lua vim.lsp.buf.references()<CR>
+" nn <leader>vrn :lua vim.lsp.buf.rename()<CR>
+" nn <leader>vh :lua vim.lsp.buf.hover()<CR>
+" nn <leader>vca :lua vim.lsp.buf.code_action()<CR>
+" nn <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
+" nn <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
 
 
 " |------|
@@ -305,5 +268,7 @@ if has('nvim')
 
 	nn <silent> <space><space> :Denite buffer file/rec<cr>
 endif
+
+nn <silent> <leader>f :Format<CR>
 
 colo synthwave84

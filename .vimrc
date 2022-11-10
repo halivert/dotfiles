@@ -70,6 +70,7 @@ vn <leader>p "+p
 vn J :m '>+1<cr>gv=gv
 vn K :m '<-2<cr>gv=gv
 
+ino <C-Space> <C-x><C-o>
 ino `<< «
 ino `>> »
 ino <C-c> <esc>
