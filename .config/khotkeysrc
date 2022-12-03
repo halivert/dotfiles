@@ -1197,7 +1197,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_4_7Actions0]
-CommandURL=/opt/Telegram/Telegram
+CommandURL=telegram-desktop
 Type=COMMAND_URL
 
 [Data_4_7Conditions]
@@ -1224,8 +1224,10 @@ ColorScheme[$d]
 ColorSchemeHash[$d]
 TerminalApplication[$d]
 TerminalService[$d]
+UseSystemBell[$d]
 XftHintStyle[$d]
 XftSubPixel[$d]
+accentColorFromWallpaper[$d]
 fixed[$d]
 font[$d]
 menuFont[$d]

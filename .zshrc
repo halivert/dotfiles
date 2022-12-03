@@ -57,6 +57,7 @@ else
 fi
 
 _CurrentDirFile="$HOME/.currentDirs/$_DirNum"
+mkdir "$HOME/.currentDirs" > /dev/null 2>&1
 unset _Tp _Tn _DirNum
 if [ $_Tx = "alacritty" ] || [ $_Tx = "konsole" ]; then
 	alias cd=changeDir;
