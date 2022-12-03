@@ -15,15 +15,21 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mboughaba/i3config.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'rajasegar/vim-astro', { 'branch': 'main' }
+" Plug 'rajasegar/vim-astro', { 'branch': 'main' }
 
 if has('nvim')
 	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 	Plug 'neovim/nvim-lspconfig'
-	Plug 'hrsh7th/nvim-cmp'
 	Plug 'williamboman/mason.nvim'
+	Plug 'hrsh7th/cmp-nvim-lsp'
+	Plug 'hrsh7th/cmp-buffer'
+	Plug 'hrsh7th/cmp-path'
+	Plug 'hrsh7th/cmp-cmdline'
+	Plug 'hrsh7th/nvim-cmp'
+	Plug 'SirVer/ultisnips'
 	Plug 'quangnguyen30192/cmp-nvim-ultisnips'
-	Plug 'mhartington/formatter.nvim'
+	Plug 'nvim-lua/plenary.nvim'
+	Plug 'jose-elias-alvarez/null-ls.nvim'
 else
 	Plug 'Shougo/denite.nvim'
 	Plug 'roxma/nvim-yarp'
@@ -44,8 +50,8 @@ Plug 'mhinz/vim-signify'
 Plug 'junegunn/gv.vim'
 
 " Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 " Frontend
 Plug 'mattn/emmet-vim'
@@ -63,7 +69,7 @@ Plug 'rafi/awesome-vim-colorschemes'
 Plug 'artanikin/vim-synthwave84'
 
 " PHP
-Plug 'phpactor/phpactor', { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o' }
+" Plug 'phpactor/phpactor', { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o' }
 cal plug#end()
 
 
@@ -268,7 +274,5 @@ if has('nvim')
 
 	nn <silent> <space><space> :Denite buffer file/rec<cr>
 endif
-
-nn <silent> <leader>f :Format<CR>
 
 colo synthwave84
