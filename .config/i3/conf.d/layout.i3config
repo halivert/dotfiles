@@ -26,7 +26,6 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+o layout stacking
 # 59 = ,
 bindcode $mod+59 layout tabbed
-bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
 bindsym $mod+Shift+d floating toggle

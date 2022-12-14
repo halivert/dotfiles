@@ -2,12 +2,13 @@
 # | Applications |
 # |--------------|
 
+bindsym $mod+e exec --no-startup-id $term -e /bin/vifm
+
 bindsym $mod+$alt+t exec /usr/bin/telegram-desktop
 bindsym $mod+$alt+b exec /usr/bin/firefox-developer-edition
 bindsym $mod+$alt+m exec /usr/bin/thunderbird
 bindsym $mod+$alt+d exec /bin/discord
 bindsym $mod+$alt+4 exec /bin/TogglDesktop
-bindsym $mod+$alt+e exec --no-startup-id $term -e /bin/vifm
 bindsym $mod+$alt+p exec pavucontrol
 bindsym $mod+$alt+c exec $HOME/.bin/vscode
 bindsym $mod+$alt+n exec nemo
