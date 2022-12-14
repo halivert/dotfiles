@@ -29,10 +29,10 @@ bindcode $mod+59 layout tabbed
 bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+d floating toggle
 
 # Change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+d focus mode_toggle
 
 bindsym $mod+Up resize grow height 3 px or 3 ppt
 bindsym $mod+Right resize grow width 3 px or 3 ppt

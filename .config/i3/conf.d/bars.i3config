@@ -53,3 +53,4 @@ bar {
 		urgent_workspace $color-binding_mode_indicator
 	}
 }
+

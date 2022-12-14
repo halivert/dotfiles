@@ -2,8 +2,8 @@
 # | Applications |
 # |--------------|
 
-bindsym $mod+$alt+t exec /opt/Telegram/Telegram
-bindsym $mod+$alt+b exec /bin/firefox
+bindsym $mod+$alt+t exec /usr/bin/telegram-desktop
+bindsym $mod+$alt+b exec /usr/bin/firefox-developer-edition
 bindsym $mod+$alt+m exec /usr/bin/thunderbird
 bindsym $mod+$alt+d exec /bin/discord
 bindsym $mod+$alt+4 exec /bin/TogglDesktop
@@ -14,3 +14,4 @@ bindsym $mod+$alt+n exec nemo
 bindsym $mod+$alt+z exec zoom
 
 exec --no-startup-id kdeconnect-indicator
+

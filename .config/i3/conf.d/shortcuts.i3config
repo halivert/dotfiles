@@ -6,7 +6,7 @@
 bindsym $mod+Return exec --no-startup-id $term
 
 # Launcher
-bindsym $mod+d exec --no-startup-id rofi -show combi
+bindsym $mod+space exec --no-startup-id rofi -show combi
 
 # Use amixer to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
@@ -30,3 +30,4 @@ bindsym $mod+u [urgent=latest] focus
 bindsym $mod+period exec --no-startup-id splatmoji type
 
 bindsym $mod+Control+z exec --no-startup-id $HOME/.bin/change-primary-screen
+
