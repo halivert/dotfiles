@@ -133,6 +133,11 @@ require('lspconfig')['jsonls'].setup {
    capabilities = capabilities,
 }
 
+require('lspconfig')['bashls'].setup {
+   on_attach = on_attach,
+   capabilities = capabilities,
+}
+
 null_ls.setup({
    sources = {
       null_ls.builtins.formatting.stylua,

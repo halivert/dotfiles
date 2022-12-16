@@ -1,0 +1,18 @@
+#! /bin/bash
+
+AVAILABLE=($(pacmd list-sinks | rg 'index:' | awk '{ print $2 }'))
+LEN=${#AVAILABLE[@]}
+
+if [ $LEN -le 1 ]; then
+	exit 1
+fi
+
+for (( i = 0; i < LEN; i++ )); do
+	if [ "${AVAILABLE[$i]}" == "index:" ]; then
+		break;
+	fi
+done
+
+NEXT=$(( ($i + 1) % $LEN  ))
+
+pacmd set-default-sink ${AVAILABLE[$NEXT]}
