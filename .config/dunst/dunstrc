@@ -32,7 +32,7 @@
     # The transparency of the window.  Range: [0; 100].
     # This option will only work if a compositing window manager is
     # present (e.g. xcompmgr, compiz, etc.). (X11 only)
-    transparency = 6
+    transparency = 3
 
     # Padding between text and icon.
     text_icon_padding = 10
@@ -161,14 +161,14 @@
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
     background = "#458588"
-    foreground = "#eeeeee"
+    foreground = "#000000"
     timeout = 10
     # Icon for notifications with low urgency, uncomment to enable
     #default_icon = /path/to/icon
 
 [urgency_normal]
-    background = "#d79921"
-    foreground = "#ffffff"
+    background = "#98971a"
+    foreground = "#000000"
     timeout = 10
     # Icon for notifications with normal urgency, uncomment to enable
     #default_icon = /path/to/icon
