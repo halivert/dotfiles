@@ -12,6 +12,7 @@ bindsym $mod+$alt+p exec pavucontrol
 bindsym $mod+$alt+c exec $HOME/.bin/vscode
 bindsym $mod+$alt+n exec nemo
 bindsym $mod+$alt+z exec zoom
+bindsym $mod+$alt+o exec /usr/bin/obsidian
 
 exec --no-startup-id kdeconnect-indicator
 
