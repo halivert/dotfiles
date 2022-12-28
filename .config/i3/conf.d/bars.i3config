@@ -13,12 +13,12 @@ set $color-urgent_workspace #282828 #CC241D #282828
 bar {
 	id primary_bar
 	output primary
-	status_command i3status
 	tray_output primary
 	tray_padding 6 px
 	position top
 	workspace_buttons yes
 	strip_workspace_numbers yes
+	status_command $HOME/.bin/i3status
 
 	colors {
 		background $color-background
@@ -40,7 +40,7 @@ bar {
 	tray_output none
 	workspace_buttons yes
 	strip_workspace_name yes
-	status_command i3status --config $HOME/.config/i3status/second.config
+	status_command $HOME/.bin/i3status --config $HOME/.config/i3status/second.config
 
 	colors {
 		background $color-background
@@ -52,5 +52,7 @@ bar {
 		binding_mode $color-binding_mode
 		urgent_workspace $color-binding_mode_indicator
 	}
+
+	bindsym button1 exec $HOME/.bin/logwheel
 }
 
