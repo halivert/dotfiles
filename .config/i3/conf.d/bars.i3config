@@ -13,7 +13,6 @@ set $color-urgent_workspace #282828 #CC241D #282828
 bar {
 	id primary_bar
 	output $primary
-	tray_output primary
 	tray_padding 6 px
 	position top
 	workspace_buttons yes
@@ -37,7 +36,6 @@ bar {
 	output $nonprimary
 	binding_mode_indicator no
 	position top
-	tray_output none
 	workspace_buttons yes
 	strip_workspace_name yes
 	status_command i3status --config $HOME/.config/i3status/second.config

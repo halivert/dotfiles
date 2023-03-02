@@ -1,20 +1,38 @@
 #!/bin/sh
 
-WORKSPACES=$(i3-msg -t get_workspaces | jq '.[].name' -r)
+# # # # # # # # # # # # # # # # # # # # # # # #
+# Setup to change screens with i3 and xrandr  #
+# # # # # # # # # # # # # # # # # # # # # # # #
 
-for i in $WORKSPACES; do
-	i3-msg "[workspace=\"$i\"]" move workspace to output next
-done
+get_workspaces () {
+	i3-msg -t get_workspaces | jq ".[] | select(.output==\"$1\").name" -r
+}
 
-PRIMARY=$(xrandr --prop | rg primary | awk '{ print $1 }')
-NONPRIMARY=$(xrandr --prop | rg connected | rg -v primary | awk '{ print $1 }')
+workspace_toggle_output () {
+	for i in $1; do
+		i3-msg "[workspace=\"$i\"]" move workspace to output $2 > /dev/null 2>&1
+	done
+}
 
-xrandr --output $PRIMARY --noprimary
-xrandr --output $NONPRIMARY --primary
+get_selected_output () {
+	rg "set $1" ~/.config/i3/conf.d/20-workspaces.i3config | awk '{ print $3 }'
+}
+
+PRIMARY=$(get_selected_output '\$primary')
+NOPRIMARY=$(get_selected_output '\$nonprimary')
+
+xrandr --output "$PRIMARY" --noprimary
+xrandr --output "$NOPRIMARY" --primary
 
 sed -i \
-	-e "5 s/$PRIMARY/$NONPRIMARY/" \
-	-e "6 s/$NONPRIMARY/$PRIMARY/" \
+	-e "5 s/$PRIMARY/$NOPRIMARY/" \
+	-e "6 s/$NOPRIMARY/$PRIMARY/" \
 	$HOME/.config/i3/conf.d/20-workspaces.i3config
 
-$HOME/.bin/i3-mkconfig && i3-msg restart
+$HOME/.bin/i3-mkconfig && i3-msg restart > /dev/null
+
+PRIMARY_WORKSPACES=$(get_workspaces "$PRIMARY")
+NOPRIMARY_WORKSPACES=$(get_workspaces "$NOPRIMARY")
+
+workspace_toggle_output "$PRIMARY_WORKSPACES" "$NOPRIMARY"
+workspace_toggle_output "$NOPRIMARY_WORKSPACES" "$PRIMARY"

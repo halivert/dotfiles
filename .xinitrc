@@ -4,8 +4,9 @@ picom -b
 
 systemctl --user import-environment DISPLAY XAUTHORITY
 
-/home/hali/.fehbg &
+$HOME/.fehbg &
 /usr/bin/blueman-applet &
+$HOME/.bin/set-last-outputs
 
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
