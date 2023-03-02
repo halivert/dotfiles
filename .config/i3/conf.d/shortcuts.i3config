@@ -24,7 +24,9 @@ bindsym $mod+Shift+b exec --no-startup-id $HOME/.local/bin/alacritty-colorscheme
 bindsym $mod+q kill
 
 bindsym Print exec --no-startup-id $HOME/.bin/snap full
+bindsym $mod+p exec --no-startup-id $HOME/.bin/snap full
 bindsym Shift+Print exec --no-startup-id $HOME/.bin/snap area
+bindsym $mod+Shift+p exec --no-startup-id $HOME/.bin/snap area
 
 bindsym $mod+u [urgent=latest] focus
 bindsym $mod+period exec --no-startup-id splatmoji type

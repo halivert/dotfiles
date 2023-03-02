@@ -16,3 +16,4 @@ done
 NEXT=$(( ($i + 1) % $LEN  ))
 
 pacmd set-default-sink ${AVAILABLE[$NEXT]}
+echo $AVAILALE[$NEXT]

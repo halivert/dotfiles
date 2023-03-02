@@ -15,17 +15,29 @@
 	"snippets.userSnippetsDirectory": "/home/hali/.vim/snippets-used",
 	"snippets.loadFromExtensions": false,
 	"snippets.extends": {
-		"blade": ["html"],
-		"liquid": ["markdown"],
-		"vimwiki": ["markdown"]
+		"blade": [
+			"html"
+		],
+		"liquid": [
+			"markdown"
+		],
+		"vimwiki": [
+			"markdown"
+		]
 	},
 	"languageserver": {},
 	"npm.binPath": "yarn",
 	"tsserver.watchOptions": {
-		"excludeDirectories": ["node_modules", "vendor"]
+		"excludeDirectories": [
+			"node_modules",
+			"vendor"
+		]
 	},
 	"phpactor.enable": true,
 	"phpactor.path": "/home/hali/.config/composer/vendor/bin/phpactor",
-	"prettier.disableLanguages": ["vue"],
-	"svelte.enable-ts-plugin": true
+	"prettier.disableLanguages": [
+		"vue"
+	],
+	"svelte.enable-ts-plugin": true,
+	"sumneko-lua.enableNvimLuaDev": true
 }

@@ -11,6 +11,7 @@ mode "$m_screen" {
 	bindsym s exec --no-startup-id "xrandr --output HDMI-1 --same-as eDP-1"
 	bindsym k exec --no-startup-id "xrandr --output HDMI-1 --above eDP-1"
 	bindsym j exec --no-startup-id "xrandr --output HDMI-1 --below eDP-1"
+	bindsym t exec --no-startup-id "$HOME/.bin/change-primary-screen"
 
 	bindsym Return mode "default"
 	bindsym Escape mode "default"

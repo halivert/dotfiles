@@ -30,6 +30,7 @@ if has('nvim')
 	Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'jose-elias-alvarez/null-ls.nvim'
+	Plug 'mfussenegger/nvim-jdtls'
 else
 	Plug 'Shougo/denite.nvim'
 	Plug 'roxma/nvim-yarp'
@@ -245,6 +246,7 @@ if has('nvim')
 
 	autocmd FileType denite-filter cal s:denite_filter_my_settings()
 	fu! s:denite_filter_my_settings() abort
+		lua require('cmp').setup.buffer { enabled = false }
 		im <silent><buffer> <tab> <plug>(denite_filter_update)
 		ino <silent><buffer><expr> <cr> denite#do_map('do_action')
 		ino <silent><buffer><expr> <c-t> denite#do_map('do_action', 'tabopen')

@@ -1,5 +1,11 @@
 #!/bin/sh
 
+WORKSPACES=$(i3-msg -t get_workspaces | jq '.[].name' -r)
+
+for i in $WORKSPACES; do
+	i3-msg "[workspace=\"$i\"]" move workspace to output next
+done
+
 PRIMARY=$(xrandr --prop | rg primary | awk '{ print $1 }')
 NONPRIMARY=$(xrandr --prop | rg connected | rg -v primary | awk '{ print $1 }')
 
