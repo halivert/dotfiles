@@ -61,16 +61,15 @@ _CurrentDirFile="$HOME/.currentDirs/$_DirNum"
 mkdir "$HOME/.currentDirs" > /dev/null 2>&1
 unset _Tp _Tn _DirNum
 if [ $_Tx = "alacritty" ] || [ $_Tx = "konsole" ]; then
-	alias cd=changeDir;
-
-	changeDir() {
-		\cd $1;
+	save_current_dir() {
 		pwd > "$_CurrentDirFile"
 	}
 
 	if [ -e $_CurrentDirFile ]; then
 		cd "$(cat $_CurrentDirFile)"
 	fi
+
+	chpwd_functions=( save_current_dir )
 fi
 
 source ~/.zsh_aliases
