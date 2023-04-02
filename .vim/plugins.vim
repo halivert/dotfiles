@@ -26,11 +26,13 @@ if has('nvim')
 	Plug 'hrsh7th/cmp-path'
 	Plug 'hrsh7th/cmp-cmdline'
 	Plug 'hrsh7th/nvim-cmp'
-	Plug 'SirVer/ultisnips'
-	Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 	Plug 'nvim-lua/plenary.nvim'
 	Plug 'jose-elias-alvarez/null-ls.nvim'
 	Plug 'mfussenegger/nvim-jdtls'
+	Plug 'MunifTanjim/prettier.nvim'
+	Plug 'saadparwaiz1/cmp_luasnip'
+	Plug 'L3MON4D3/LuaSnip'
+	Plug 'rafamadriz/friendly-snippets'
 else
 	Plug 'Shougo/denite.nvim'
 	Plug 'roxma/nvim-yarp'
@@ -178,21 +180,6 @@ nn <silent> t<c-t> :TestLast<cr>
 nn <silent> t<c-g> :TestVisit<cr>
 
 
-" |-----|
-" | LSP |
-" |-----|
-
-" nn <leader>vd :lua vim.lsp.buf.definition()<CR>
-" nn <leader>vi :lua vim.lsp.buf.implementation()<CR>
-" nn <leader>vsh :lua vim.lsp.buf.signature_help()<CR>
-" nn <leader>vrr :lua vim.lsp.buf.references()<CR>
-" nn <leader>vrn :lua vim.lsp.buf.rename()<CR>
-" nn <leader>vh :lua vim.lsp.buf.hover()<CR>
-" nn <leader>vca :lua vim.lsp.buf.code_action()<CR>
-" nn <leader>vsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
-" nn <leader>vn :lua vim.lsp.diagnostic.goto_next()<CR>
-
-
 " |------|
 " | Test |
 " |------|
@@ -277,4 +264,4 @@ if has('nvim')
 	nn <silent> <space><space> :Denite buffer file/rec<cr>
 endif
 
-colo synthwave84
+colo gruvbox
