@@ -159,6 +159,15 @@ require("lspconfig")["phpactor"].setup({
    capabilities = capabilities,
 })
 
+require("lspconfig")["intelephense"].setup({
+   on_attach = on_attach,
+   capabilities = capabilities,
+   cmd = { 'intelephense', '--stdio' },
+   init_options = {
+      globalStoragePath = path.join(home, ".intelephense"),
+   }
+})
+
 require("lspconfig")["jsonls"].setup({
    on_attach = on_attach,
    capabilities = capabilities,

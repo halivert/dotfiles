@@ -140,21 +140,6 @@ let g:jekyll_post_template=[
 
 
 " |-----|
-" | Php |
-" |-----|
-" no <leader>u :PhpactorImportClass<cr>
-" no <leader>mm :PhpactorContextMenu<cr>
-" no <leader>nn :PhpactorNavigate<cr>
-" no <leader>o :PhpactorGotoDefinition<cr>
-" no <leader>K :PhpactorHover<cr>
-" no <leader>tt :PhpactorTransform<cr>
-" no <leader>cc :PhpactorClassNew<cr>
-" no <silent><leader>ee :PhpactorExtractExpression(v:false)<cr>
-" vn <silent><leader>ee :PhpactorExtractExpression(v:true)<cr>
-" vn <silent><leader>em :PhpactorExtractMethod<cr>
-
-
-" |-----|
 " | C++ |
 " |-----|
 let g:clang_format#style_options={
@@ -264,4 +249,4 @@ if has('nvim')
 	nn <silent> <space><space> :Denite buffer file/rec<cr>
 endif
 
-colo gruvbox
+colo synthwave84
