@@ -1,5 +1,5 @@
 [$Version]
-update_info=spectacle_shortcuts.upd:spectacle-migrate-shortcuts,konsole_globalaccel.upd:konsole_globalaccel
+update_info=spectacle_shortcuts.upd:spectacle-migrate-shortcuts,konsole_globalaccel.upd:konsole_globalaccel,konsole.upd:konsole_globalaccel
 
 [ColorEffects:Disabled]
 ChangeSelectionColor[$d]
@@ -1197,7 +1197,7 @@ Type=SIMPLE_ACTION_DATA
 ActionsCount=1
 
 [Data_4_7Actions0]
-CommandURL=telegram-desktop
+CommandURL=/opt/Telegram/Telegram
 Type=COMMAND_URL
 
 [Data_4_7Conditions]
