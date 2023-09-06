@@ -15,7 +15,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mboughaba/i3config.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-" Plug 'rajasegar/vim-astro', { 'branch': 'main' }
+Plug 'rajasegar/vim-astro'
 
 if has('nvim')
 	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -71,6 +71,8 @@ Plug 'lervag/vimtex'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'artanikin/vim-synthwave84'
 
+Plug 'brenoprata10/nvim-highlight-colors'
+
 " PHP
 " Plug 'phpactor/phpactor', { 'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o' }
 cal plug#end()
@@ -80,7 +82,7 @@ cal plug#end()
 " | Closetag |
 " |----------|
 let g:closetag_filenames = '*.html,*.php,*.jsx'
-let g:closetag_filetypes = 'html,blade,vue,markdown,liquid'
+let g:closetag_filetypes = 'html,blade,vue,markdown,liquid,astro'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 
 
@@ -193,7 +195,7 @@ let g:vimtex_view_method = 'zathura'
 " |--------|
 if has('nvim')
 	cal denite#custom#var('file/rec', 'command', [
-				\		'rg', '--files', '--hidden',
+				\		'rg', '--files', '--hidden'
 				\ ])
 
 	autocmd FileType denite cal s:denite_my_settings()

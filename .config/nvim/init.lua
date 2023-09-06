@@ -16,7 +16,7 @@ local home = os.getenv("HOME")
 local null_ls = require("null-ls")
 
 -- luasnip setup
-local luasnip = require 'luasnip'
+local luasnip = require("luasnip")
 
 cmp.setup({
    snippet = {
@@ -25,14 +25,14 @@ cmp.setup({
       end,
    },
    mapping = cmp.mapping.preset.insert({
-      ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<CR>'] = cmp.mapping.confirm {
+      ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+      ["<C-f>"] = cmp.mapping.scroll_docs(4),
+      ["<C-Space>"] = cmp.mapping.complete(),
+      ["<CR>"] = cmp.mapping.confirm({
          behavior = cmp.ConfirmBehavior.Replace,
          select = true,
-      },
-      ['<Tab>'] = cmp.mapping(function(fallback)
+      }),
+      ["<Tab>"] = cmp.mapping(function(fallback)
          if cmp.visible() then
             cmp.select_next_item()
          elseif luasnip.expand_or_jumpable() then
@@ -40,8 +40,8 @@ cmp.setup({
          else
             fallback()
          end
-      end, { 'i', 's' }),
-      ['<S-Tab>'] = cmp.mapping(function(fallback)
+      end, { "i", "s" }),
+      ["<S-Tab>"] = cmp.mapping(function(fallback)
          if cmp.visible() then
             cmp.select_prev_item()
          elseif luasnip.jumpable(-1) then
@@ -49,14 +49,14 @@ cmp.setup({
          else
             fallback()
          end
-      end, { 'i', 's' }),
+      end, { "i", "s" }),
    }),
    sources = {
-      { name = 'nvim_lsp' },
-      { name = 'luasnip' },
+      { name = "nvim_lsp" },
+      { name = "luasnip" },
       { name = "buffer" },
       { name = "path" },
-   }
+   },
 })
 
 require("luasnip.loaders.from_vscode").lazy_load()
@@ -134,6 +134,7 @@ require("lspconfig")["volar"].setup({
       volar = {
          autoCompleteRefs = true,
          printWidth = 80,
+         shiftWidth = 2,
       },
    },
 })
@@ -162,10 +163,10 @@ require("lspconfig")["phpactor"].setup({
 require("lspconfig")["intelephense"].setup({
    on_attach = on_attach,
    capabilities = capabilities,
-   cmd = { 'intelephense', '--stdio' },
+   cmd = { "intelephense", "--stdio" },
    init_options = {
       globalStoragePath = path.join(home, ".intelephense"),
-   }
+   },
 })
 
 require("lspconfig")["jsonls"].setup({
@@ -174,6 +175,11 @@ require("lspconfig")["jsonls"].setup({
 })
 
 require("lspconfig")["bashls"].setup({
+   on_attach = on_attach,
+   capabilities = capabilities,
+})
+
+require("lspconfig")["clangd"].setup({
    on_attach = on_attach,
    capabilities = capabilities,
 })
@@ -236,7 +242,6 @@ require("prettier").setup({
       "javascriptreact",
       "json",
       "less",
-      "markdown",
       "scss",
       "typescript",
       "typescriptreact",
@@ -245,6 +250,7 @@ require("prettier").setup({
    cli_options = {
       print_width = 80,
       semi = false,
+      shift_width = 2,
    },
 })
 
