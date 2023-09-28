@@ -26,6 +26,7 @@ PATH="$PATH:$HOME/.local/bin"
 PATH="$PATH:$HOME/.go/bin"
 PATH="$PATH:$HOME/.cargo/bin"
 PATH="$PATH:$HOME/Documents/google-cloud-sdk/bin"
+PATH="$PATH:$HOME/.local/share/nvim/bin"
 
 # Prompt only last 3 directories from PWD
 function min_path_prompt () {
@@ -113,3 +114,8 @@ zstyle ':completion:*:*:git:*' script /opt/local/share/bash-completion/completio
 
 # # The next line enables shell command completion for gcloud.
 # if [ -f '/Users/hali/Documents/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/hali/Documents/google-cloud-sdk/completion.zsh.inc'; fi
+
+# pnpm
+export PNPM_HOME="/Users/hali/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

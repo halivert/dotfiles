@@ -16,3 +16,7 @@
   autoSetupRemote = yes
 [advice]
   addIgnoredFile = false
+[user]
+	name = Halí V.
+	email = halivelazquez@outlook.com
+	signingKey = halivelazquez@outlook.com
