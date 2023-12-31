@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+# Setup to set last output arrangement with xrandr	#
+# # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+get_selected_output () {
+	rg "set $1" ~/.config/i3/conf.d/20-workspaces.i3config | awk '{ print $3 }'
+}
+
+PRIMARY=$(get_selected_output '\$primary')
+NOPRIMARY=$(get_selected_output '\$nonprimary')
+
+xrandr --output "$NOPRIMARY" --noprimary
+xrandr --output "$PRIMARY" --primary
+

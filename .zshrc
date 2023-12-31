@@ -138,3 +138,7 @@ source /usr/share/nvm/init-nvm.sh
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)

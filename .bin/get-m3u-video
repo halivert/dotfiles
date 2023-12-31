@@ -1,0 +1,6 @@
+#! /bin/bash
+
+# https://video.twimg.com/amplify_video/1669785809682046976/pl/720x720/4Et86JY_QPiiaGS-.m3u8?container=fmp4
+URL=$1
+OUT=$2
+ffmpeg -i "$URL" -c copy -bsf:a aac_adtstoasc $OUT

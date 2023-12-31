@@ -109,26 +109,29 @@ require("lspconfig")["tsserver"].setup({
 })
 
 local util = require("lspconfig.util")
-local path = util.path
-local volar_path = path.join(vim.fn.stdpath("data"), "lsp_servers", "volar", "node_modules")
-local global_ts_server_path = path.join(volar_path, "typescript", "lib")
-
-local function get_typescript_lib_path(root_dir)
-   local project_root = util.find_node_modules_ancestor(root_dir)
-   return project_root and (path.join(project_root, "node_modules", "typescript", "lib")) or global_ts_server_path
+local function get_typescript_server_path(root_dir)
+   local global_ts =
+      util.path.join(home, ".nvm", "versions", "node", "v18.17.1", "lib", "node_modules", "typescript", "lib")
+   local found_ts = ""
+   local function check_dir(path)
+      found_ts = util.path.join(path, "node_modules", "typescript", "lib")
+      if util.path.exists(found_ts) then
+         return path
+      end
+   end
+   if util.search_ancestors(root_dir, check_dir) then
+      return found_ts
+   else
+      return global_ts
+   end
 end
 
 require("lspconfig")["volar"].setup({
    on_attach = on_attach,
    filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
    capabilities = capabilities,
-   init_options = {
-      typescript = {
-         tsdk = path.join(home, ".config", "yarn", "global", "node_modules", "typescript", "lib", "tsserverlibrary.js"),
-      },
-   },
    on_new_config = function(new_config, new_root_dir)
-      new_config.init_options.typescript.tsdk = get_typescript_lib_path(new_root_dir)
+      new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
    end,
    settings = {
       volar = {
@@ -165,7 +168,7 @@ require("lspconfig")["intelephense"].setup({
    capabilities = capabilities,
    cmd = { "intelephense", "--stdio" },
    init_options = {
-      globalStoragePath = path.join(home, ".intelephense"),
+      globalStoragePath = util.path.join(home, ".intelephense"),
    },
 })
 
@@ -184,13 +187,26 @@ require("lspconfig")["clangd"].setup({
    capabilities = capabilities,
 })
 
+local project_library_path = "/home/hali/.local/share/nvim/packages/angular-language-server/node_modules/@angular/language-server"
+local cmd =
+   { "ngserver", "--stdio", "--tsProbeLocations", project_library_path, "--ngProbeLocations", project_library_path }
+
+require("lspconfig")["angularls"].setup({
+   on_attach = on_attach,
+   capabilities = capabilities,
+   cmd = cmd,
+   on_new_config = function(new_config, new_root_dir)
+      new_config.cmd = cmd
+   end,
+})
+
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 project_name = project_name:gsub("%W", "_")
 local workspace_folder = vim.fn.expand("$HOME/.cache/jdtls/data/") .. project_name
 
 require("lspconfig")["jdtls"].setup({
    cmd = {
-      path.join(vim.fn.stdpath("data"), "bin", "jdtls"),
+      util.path.join(vim.fn.stdpath("data"), "bin", "jdtls"),
       "-data",
       workspace_folder,
    },
@@ -204,7 +220,7 @@ require("lspconfig")["jdtls"].setup({
                -- Use Google Java style guidelines for formatting
                -- To use, make sure to download the file from https://github.com/google/styleguide/blob/gh-pages/eclipse-java-google-style.xml
                -- and place it in the ~/.local/share/eclipse directory
-               url = path.join(home, ".local", "share", "eclipse", "eclipse-java-google-style.xml"),
+               url = util.path.join(home, ".local", "share", "eclipse", "eclipse-java-google-style.xml"),
                profile = "GoogleStyle",
             },
          },
@@ -253,6 +269,8 @@ require("prettier").setup({
       shift_width = 2,
    },
 })
+
+print(vim.fn.stdpath("data"))
 
 require("mason").setup({
    install_root_dir = vim.fn.stdpath("data"),

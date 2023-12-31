@@ -1,1 +1,1 @@
-" nn <A-F> :Prettier<cr>
+nn <buffer> <silent><A-F> :Prettier<cr>

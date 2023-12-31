@@ -15,7 +15,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'mboughaba/i3config.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'rajasegar/vim-astro'
+Plug 'wuelnerdotexe/vim-astro'
+" Plug 'rajasegar/vim-astro'
 
 if has('nvim')
 	Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -251,4 +252,6 @@ if has('nvim')
 	nn <silent> <space><space> :Denite buffer file/rec<cr>
 endif
 
-colo synthwave84
+let g:astro_typescript = 'enable'
+
+colo gruvbox

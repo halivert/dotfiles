@@ -26,6 +26,11 @@ ShowMenuBarByDefault=false
 UseSingleInstance=true
 
 [MainWindow]
+2 screens: Height=1053
+2 screens: Width=640
+2 screens: XPosition=1280
+2 screens: YPosition=27
+HDMI-1 eDP-1=HDMI-1
 HDMI-1 eDP-1 Height 1920x1080=740
 HDMI-1 eDP-1 Width 1920x1080=1366
 HDMI-1 eDP-1 XPosition 1920x1080=1643
