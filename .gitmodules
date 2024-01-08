@@ -1,6 +1,6 @@
 [submodule "alacritty-themes"]
 	path = .config/alacritty/themes
-	url = https://github.com/eendroroy/alacritty-theme
+	url = https://github.com/alacritty/alacritty-theme.git
 	branch = master
 [submodule "vifm-colors"]
 	path = .config/vifm/colors
