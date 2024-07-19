@@ -46,4 +46,3 @@ alias yd="yarn dev"
 
 alias phpunit="./vendor/bin/phpunit"
 
-alias cremeriaXilo="ssh u440-2tzuhg2wm3b4@ssh.cremeriaxilo.com -p 18765"

@@ -111,7 +111,7 @@ require("lspconfig")["tsserver"].setup({
 local util = require("lspconfig.util")
 local function get_typescript_server_path(root_dir)
    local global_ts =
-      util.path.join(home, ".nvm", "versions", "node", "v18.17.1", "lib", "node_modules", "typescript", "lib")
+      util.path.join(home, ".nvm", "versions", "node", "v18.19.0", "lib", "node_modules", "typescript", "lib")
    local found_ts = ""
    local function check_dir(path)
       found_ts = util.path.join(path, "node_modules", "typescript", "lib")
@@ -133,13 +133,11 @@ require("lspconfig")["volar"].setup({
    on_new_config = function(new_config, new_root_dir)
       new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
    end,
-   settings = {
-      volar = {
-         autoCompleteRefs = true,
-         printWidth = 80,
-         shiftWidth = 2,
-      },
-   },
+   init_options = {
+      vue = {
+         hybridMode = false,
+      }
+   }
 })
 
 require("lspconfig")["cssls"].setup({
@@ -154,6 +152,34 @@ require("lspconfig")["astro"].setup({
 })
 
 require("lspconfig")["lua_ls"].setup({
+   on_init = function(client)
+      local path = client.workspace_folders[1].name
+      if not vim.loop.fs_stat(path .. "/.luarc.json") and not vim.loop.fs_stat(path .. "/.luarc.jsonc") then
+         client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
+            Lua = {
+               runtime = {
+                  -- Tell the language server which version of Lua you're using
+                  -- (most likely LuaJIT in the case of Neovim)
+                  version = "LuaJIT",
+               },
+               -- Make the server aware of Neovim runtime files
+               workspace = {
+                  checkThirdParty = false,
+                  library = {
+                     vim.env.VIMRUNTIME,
+                     -- "${3rd}/luv/library"
+                     -- "${3rd}/busted/library",
+                  },
+                  -- or pull in all of 'runtimepath'. NOTE: this is a lot slower
+                  -- library = vim.api.nvim_get_runtime_file("", true)
+               },
+            },
+         })
+
+         client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+      end
+      return true
+   end,
    on_attach = on_attach,
    capabilities = capabilities,
 })
@@ -187,7 +213,8 @@ require("lspconfig")["clangd"].setup({
    capabilities = capabilities,
 })
 
-local project_library_path = "/home/hali/.local/share/nvim/packages/angular-language-server/node_modules/@angular/language-server"
+local project_library_path =
+   "/home/hali/.local/share/nvim/packages/angular-language-server/node_modules/@angular/language-server"
 local cmd =
    { "ngserver", "--stdio", "--tsProbeLocations", project_library_path, "--ngProbeLocations", project_library_path }
 
@@ -226,6 +253,11 @@ require("lspconfig")["jdtls"].setup({
          },
       },
    },
+})
+
+require("lspconfig")["tailwindcss"].setup({
+   on_attach = on_attach,
+   capabilities = capabilities,
 })
 
 null_ls.setup({

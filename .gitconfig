@@ -18,3 +18,5 @@
   gpgSign = true
 [push]
   autoSetupRemote = true
+[maintenance]
+	repo = /home/hali/Documents/JW/outlines

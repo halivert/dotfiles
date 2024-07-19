@@ -13,5 +13,6 @@ mode "$m_system" {
 	bindsym Escape mode "default"
 }
 
-bindsym $mod+Control+0 mode "$m_system"
+# bindsym $mod+Control+0 mode "$m_system"
+bindsym $mod+Control+0 exec --no-startup-id "loginctl lock-session 2"
 
