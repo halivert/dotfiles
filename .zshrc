@@ -119,3 +119,7 @@ zstyle ':completion:*:*:git:*' script /opt/local/share/bash-completion/completio
 export PNPM_HOME="/Users/hali/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/hali/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

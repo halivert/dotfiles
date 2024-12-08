@@ -10,6 +10,8 @@
   ff = no
 [credential]
   helper = /usr/lib/git-core/git-credential-libsecret
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
 [commit]
   gpgSign = true
 [push]
@@ -20,3 +22,5 @@
 	name = Halí V.
 	email = halivelazquez@outlook.com
 	signingKey = halivelazquez@outlook.com
+[credential "https://dev.azure.com"]
+	useHttpPath = true

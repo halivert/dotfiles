@@ -47,3 +47,5 @@ alias yd="yarn dev"
 alias k="kubectl"
 alias kp="kubectl get pods"
 alias kd="kubectl get deployments"
+
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
