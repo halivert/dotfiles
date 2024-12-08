@@ -12,5 +12,6 @@ $HOME/.bin/set-last-outputs
 # eval $(gnome-keyring-daemon --start)
 # export SSH_AUTH_SOCK
 
+echo "Hola hehehe" > /tmp/saludo
 export DESKTOP_SESSION='i3'
 exec i3 > $HOME/.cache/i3out 2> $HOME/.cache/i3err

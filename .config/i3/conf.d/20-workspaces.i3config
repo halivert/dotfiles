@@ -2,8 +2,8 @@
 # | Workspaces |
 # |------------|
 
-set $primary HDMI-1
-set $nonprimary eDP-1
+set $primary eDP-1
+set $nonprimary HDMI-1
 # xrandr --prop | ag primary | awk '{ print $1 }'
 # xrandr --prop | ag connected | awk '{ print $1 }' | xargs
 
