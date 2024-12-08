@@ -15,8 +15,8 @@ export GOPATH="/home/hali/.go"
 export MNTPATH="/run/media/hali/"
 export GPG_TTY=$(tty)
 
-export CODEPATH="$HOME/Documents/Code"
-export BLOGPATH="$HOME/Documents/Code/halivert.dev"
+export CODEPATH="$HOME/Documents/code"
+export BLOGPATH="$HOME/Documents/code/halivert.dev"
 export WORKPATH="$HOME/Documents/Projects"
 export JWPATH="$HOME/Documents/JW"
 
@@ -52,7 +52,7 @@ _Tp="$(cat /proc/$(echo $$)/stat | cut -d \  -f 4)"
 _Tn="$(ps -f -p $_Tp | tail -1 | sed 's/^.* //')"
 _Tx="$(basename '/'$_Tn)"
 
-if command -v i3-msg >/dev/null 2>&1; then
+if command i3-msg >/dev/null 2>&1; then
 	_DirNum="$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num' -r)"
 else
 	_DirNum="dir"

@@ -102,40 +102,37 @@ local lsp_flags = {
    debounce_text_changes = 150,
 }
 
+local util = require("lspconfig.util")
+local path = util.path
+local node_modules_path = path.join(home, ".nvm", "versions", "node", "v20.11.0", "lib", "node_modules")
+local vue_plugin_path = path.join(node_modules_path, "@vue", "typescript-plugin")
+
 require("lspconfig")["ts_ls"].setup({
+   init_options = {
+      plugins = {
+         {
+            name = "@vue/typescript-plugin",
+            location = vue_plugin_path,
+            languages = { "javascript", "typescript", "vue" },
+         },
+      },
+   },
    on_attach = on_attach,
    flags = lsp_flags,
    capabilities = capabilities,
+   filetypes = {
+      "javascript",
+      "typescript",
+      "vue",
+   },
 })
-
-local util = require("lspconfig.util")
-local function get_typescript_server_path(root_dir)
-   local global_ts =
-      util.path.join(home, ".nvm", "versions", "node", "v18.19.0", "lib", "node_modules", "typescript", "lib")
-   local found_ts = ""
-   local function check_dir(path)
-      found_ts = util.path.join(path, "node_modules", "typescript", "lib")
-      if util.path.exists(found_ts) then
-         return path
-      end
-   end
-   if util.search_ancestors(root_dir, check_dir) then
-      return found_ts
-   else
-      return global_ts
-   end
-end
 
 require("lspconfig")["volar"].setup({
    on_attach = on_attach,
-   filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json" },
    capabilities = capabilities,
-   on_new_config = function(new_config, new_root_dir)
-      new_config.init_options.typescript.tsdk = get_typescript_server_path(new_root_dir)
-   end,
-   init_options = {
+   settings = {
       vue = {
-         hybridMode = false,
+         printWidth = 80,
       }
    }
 })
@@ -153,8 +150,8 @@ require("lspconfig")["astro"].setup({
 
 require("lspconfig")["lua_ls"].setup({
    on_init = function(client)
-      local path = client.workspace_folders[1].name
-      if not vim.loop.fs_stat(path .. "/.luarc.json") and not vim.loop.fs_stat(path .. "/.luarc.jsonc") then
+      local luaPath = client.workspace_folders[1].name
+      if not vim.loop.fs_stat(luaPath .. "/.luarc.json") and not vim.loop.fs_stat(luaPath .. "/.luarc.jsonc") then
          client.config.settings = vim.tbl_deep_extend("force", client.config.settings, {
             Lua = {
                runtime = {
@@ -214,9 +211,9 @@ require("lspconfig")["clangd"].setup({
 })
 
 local project_library_path =
-   "/home/hali/.local/share/nvim/packages/angular-language-server/node_modules/@angular/language-server"
+"/home/hali/.local/share/nvim/packages/angular-language-server/node_modules/@angular/language-server"
 local cmd =
-   { "ngserver", "--stdio", "--tsProbeLocations", project_library_path, "--ngProbeLocations", project_library_path }
+{ "ngserver", "--stdio", "--tsProbeLocations", project_library_path, "--ngProbeLocations", project_library_path }
 
 require("lspconfig")["angularls"].setup({
    on_attach = on_attach,
@@ -258,26 +255,6 @@ require("lspconfig")["jdtls"].setup({
 require("lspconfig")["tailwindcss"].setup({
    on_attach = on_attach,
    capabilities = capabilities,
-})
-
-null_ls.setup({
-   sources = {
-      null_ls.builtins.formatting.stylua,
-      null_ls.builtins.formatting.blade_formatter,
-   },
-   on_attach = function(client, bufnr)
-      if client.supports_method("textDocument/formatting") then
-         vim.keymap.set("n", "<Leader>f", function()
-            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-         end, { buffer = bufnr, desc = "[lsp] format" })
-      end
-
-      if client.supports_method("textDocument/rangeFormatting") then
-         vim.keymap.set("x", "<Leader>f", function()
-            vim.lsp.buf.format({ bufnr = vim.api.nvim_get_current_buf() })
-         end, { buffer = bufnr, desc = "[lsp] format" })
-      end
-   end,
 })
 
 require("prettier").setup({

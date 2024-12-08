@@ -25,9 +25,9 @@ order += "battery 0"
 order += "volume master"
 order += "tztime local"
 
-wireless wlan0 {
-  format_up = " %essid (%quality)"
-  format_down = ""
+wireless wlo1 {
+  format_up = "   %essid (%quality)"
+  format_down = " "
 }
 
 ethernet _first_ {
@@ -37,10 +37,10 @@ ethernet _first_ {
 
 battery 0 {
   format = "%status %percentage"
-  status_chr = ""
-  status_bat = ""
-  status_full = ""
-  status_unk = "?"
+  status_chr = " "
+  status_bat = " "
+  status_full = " "
+  status_unk = " "
   path = "/sys/class/power_supply/BAT%d/uevent"
   low_threshold = 21
 }
@@ -64,8 +64,8 @@ tztime local {
 }
 
 volume master {
-  format = " %volume"
-  format_muted = ""
+  format = " %volume"
+  format_muted = " "
   device = "default"
   mixer = "Master"
   mixer_idx = 0
