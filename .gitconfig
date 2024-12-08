@@ -14,9 +14,13 @@
   ff = no
 [credential]
   helper = /usr/lib/git-core/git-credential-libsecret
+	helper = 
+	helper = /usr/bin/git-credential-manager
 [commit]
   gpgSign = true
 [push]
   autoSetupRemote = true
 [maintenance]
 	repo = /home/hali/Documents/JW/outlines
+[credential "https://dev.azure.com"]
+	useHttpPath = true

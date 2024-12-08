@@ -3,6 +3,7 @@
 fpath=(~/.zsh $fpath)
 
 export XDG_CONFIG_HOME="$HOME/.config"
+export GCM_CREDENTIAL_STORE=secretservice
 
 export EDITOR="nvim"
 export TEXMFHOME="/home/hali/.texmf"

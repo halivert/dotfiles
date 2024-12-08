@@ -16,6 +16,7 @@ Plug 'mboughaba/i3config.vim'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'wuelnerdotexe/vim-astro'
+Plug 'martineausimon/nvim-lilypond-suite'
 " Plug 'rajasegar/vim-astro'
 
 if has('nvim')

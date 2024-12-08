@@ -302,7 +302,13 @@ require("prettier").setup({
    },
 })
 
-print(vim.fn.stdpath("data"))
+require("nvls").setup({
+   lilypond = {
+      options = {
+         pdf_viewer = 'zathura'
+      }
+   }
+})
 
 require("mason").setup({
    install_root_dir = vim.fn.stdpath("data"),
