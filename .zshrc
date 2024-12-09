@@ -52,7 +52,7 @@ _Tp="$(cat /proc/$(echo $$)/stat | cut -d \  -f 4)"
 _Tn="$(ps -f -p $_Tp | tail -1 | sed 's/^.* //')"
 _Tx="$(basename '/'$_Tn)"
 
-if command i3-msg >/dev/null 2>&1; then
+if pgrep -x "i3" > /dev/null; then
 	_DirNum="$(i3-msg -t get_workspaces | jq '.[] | select(.focused==true).num' -r)"
 else
 	_DirNum="dir"

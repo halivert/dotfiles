@@ -1,6 +1,6 @@
 [general]
 import = [
-	"~/.config/alacritty/themes/themes/gruvbox_light.toml"
+	"~/.config/alacritty/themes/themes/gruvbox_dark.toml"
 ]
 
 [colors]
@@ -13,15 +13,15 @@ style = "Underline"
 size = 12
 
 [font.bold]
-family = "Iosevka"
+family = "Alacritty Font"
 style = "Bold"
 
 [font.italic]
-family = "Iosevka"
+family = "Alacritty Font"
 style = "Italic"
 
 [font.normal]
-family = "Iosevka"
+family = "Alacritty Font"
 style = "Regular"
 
 [[keyboard.bindings]]

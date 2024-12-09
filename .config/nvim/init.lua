@@ -13,8 +13,6 @@ vim.cmd([[
 local cmp = require("cmp")
 local home = os.getenv("HOME")
 
-local null_ls = require("null-ls")
-
 -- luasnip setup
 local luasnip = require("luasnip")
 

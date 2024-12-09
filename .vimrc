@@ -32,6 +32,7 @@ se inccommand=split
 se undodir=$HOME/.vim/undodir
 se spl=es_mx
 se nuw=3
+se nrformats+=hex
 
 " Save position and folds on exit, and load them on enter
 se viewoptions=folds,cursor
