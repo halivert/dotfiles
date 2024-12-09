@@ -26,7 +26,7 @@ order += "volume master"
 order += "tztime local"
 
 wireless wlo1 {
-  format_up = "   %essid (%quality)"
+  format_up = " %essid (%quality)"
   format_down = " "
 }
 
@@ -64,7 +64,7 @@ tztime local {
 }
 
 volume master {
-  format = "   %volume"
+  format = " %volume"
   format_muted = " "
   device = "default"
   mixer = "Master"

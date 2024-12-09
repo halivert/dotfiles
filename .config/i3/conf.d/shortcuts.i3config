@@ -9,9 +9,9 @@ bindsym $mod+Return exec --no-startup-id $term
 bindsym $mod+space exec --no-startup-id rofi -show combi
 
 # Use amixer to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%-
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_03_00.6.analog-stereo +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume alsa_output.pci-0000_03_00.6.analog-stereo -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute alsa_output.pci-0000_03_00.6.analog-stereo toggle
 
 bindsym XF86AudioPlay exec --no-startup-id pgrep pragha && pragha --pause
 bindsym XF86AudioNext exec --no-startup-id pgrep pragha && pragha --next

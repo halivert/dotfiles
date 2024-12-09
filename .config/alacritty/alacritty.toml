@@ -13,15 +13,15 @@ style = "Underline"
 size = 12
 
 [font.bold]
-family = "Alacritty Font"
+family = "Iosevka"
 style = "Bold"
 
 [font.italic]
-family = "Alacritty Font"
+family = "Iosevka"
 style = "Italic"
 
 [font.normal]
-family = "Alacritty Font"
+family = "Iosevka"
 style = "Regular"
 
 [[keyboard.bindings]]
