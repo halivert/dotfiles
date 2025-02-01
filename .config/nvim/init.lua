@@ -132,7 +132,12 @@ require("lspconfig")["volar"].setup({
       vue = {
          printWidth = 80,
       }
-   }
+   },
+   init_options = {
+      typescript = {
+         tsdk = path.join(home, "/.local/share/nvim/packages/astro-language-server/node_modules/typescript/lib/")
+      },
+   },
 })
 
 require("lspconfig")["cssls"].setup({
@@ -143,7 +148,13 @@ require("lspconfig")["cssls"].setup({
 
 require("lspconfig")["astro"].setup({
    on_attach = on_attach,
+   flags = lsp_flags,
    capabilities = capabilities,
+   init_options = {
+      typescript = {
+         tsdk = path.join(home, "/.local/share/nvim/packages/astro-language-server/node_modules/typescript/lib/")
+      },
+   },
 })
 
 require("lspconfig")["lua_ls"].setup({
@@ -208,20 +219,20 @@ require("lspconfig")["clangd"].setup({
    capabilities = capabilities,
 })
 
-local project_library_path =
-"/home/hali/.local/share/nvim/packages/angular-language-server/node_modules/@angular/language-server"
-local cmd =
-{ "ngserver", "--stdio", "--tsProbeLocations", project_library_path, "--ngProbeLocations", project_library_path }
-
-require("lspconfig")["angularls"].setup({
-   on_attach = on_attach,
-   capabilities = capabilities,
-   cmd = cmd,
-   on_new_config = function(new_config, new_root_dir)
-      new_config.cmd = cmd
-   end,
-})
-
+-- local project_library_path =
+-- "/home/hali/.local/share/nvim/packages/angular-language-server/node_modules/@angular/language-server"
+-- local cmd =
+-- { "ngserver", "--stdio", "--tsProbeLocations", project_library_path, "--ngProbeLocations", project_library_path }
+--
+-- require("lspconfig")["angularls"].setup({
+--    on_attach = on_attach,
+--    capabilities = capabilities,
+--    cmd = cmd,
+--    on_new_config = function(new_config, new_root_dir)
+--       new_config.cmd = cmd
+--    end,
+-- })
+--
 local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
 project_name = project_name:gsub("%W", "_")
 local workspace_folder = vim.fn.expand("$HOME/.cache/jdtls/data/") .. project_name

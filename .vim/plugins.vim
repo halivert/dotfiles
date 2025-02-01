@@ -60,7 +60,7 @@ Plug 'junegunn/gv.vim'
 
 " Frontend
 Plug 'mattn/emmet-vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install --production' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
 " Jekyll
 Plug 'parkr/vim-jekyll'

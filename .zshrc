@@ -22,7 +22,7 @@ export JWPATH="$HOME/Documents/JW"
 
 PATH="$PATH:$HOME/.bin"
 PATH="$PATH:$HOME/.config/composer/vendor/bin"
-PATH="$PATH:$HOME/.local/share/gem/ruby/3.0.0/bin"
+PATH="$PATH:$HOME/.local/share/gem/ruby/3.3.0/bin"
 PATH="$PATH:$HOME/.yarn/bin"
 PATH="$PATH:$HOME/.npm/bin"
 PATH="$PATH:$HOME/.local/bin"
