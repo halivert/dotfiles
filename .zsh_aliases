@@ -2,7 +2,7 @@ alias ..="cd .."
 alias .="cd ."
 alias la="ls -A"
 alias ll="ls -lh"
-alias dof="/opt/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dof="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
 alias less="less -R"
 
 alias goCode="cd $CODEPATH"

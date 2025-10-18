@@ -2,6 +2,9 @@
 
 fpath=(~/.zsh $fpath)
 
+autoload -Uz compinit
+compinit
+
 export XDG_CONFIG_HOME="$HOME/.config"
 
 export EDITOR="nvim"
@@ -105,9 +108,11 @@ bindkey "^e" edit-command-line
 # Disable <C-s> pause terminal
 stty -ixon
 
-source /opt/local/share/nvm/init-nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-zstyle ':completion:*:*:git:*' script /opt/local/share/bash-completion/completions/git
+# zstyle ':completion:*:*:git:*' script /opt/local/share/bash-completion/completions/git
 
 # The next line updates PATH for the Google Cloud SDK.
 # if [ -f '/Users/hali/Documents/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/hali/Documents/google-cloud-sdk/path.zsh.inc'; fi
