@@ -128,3 +128,23 @@ export PATH="$PNPM_HOME:$PATH"
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 export PATH="/Users/hali/.rd/bin:$PATH"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/hali/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP binary.
+export PATH="/Users/hali/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP binary.
+export PATH="/Users/hali/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP binary.
+export PATH="/Users/hali/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="/Users/hali/Library/Application Support/Herd/config/php/85/"
